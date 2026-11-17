@@ -1,31 +1,45 @@
-# AI Research Atlas · 人工智能研究全景图
+# AI Research Atlas · 人工智能研究知识图谱
 
-**Interactive website / 网站：** https://xiangyue-8829.github.io/ai-research-atlas/
+**Website / 在线网站：** https://xiangyue-8829.github.io/ai-research-atlas-preview/
 
-**Chinese AI research landscape / 中文版：** https://xiangyue-8829.github.io/ai-research-atlas/research-framework.html
+A bilingual, interactive research atlas for prospective AI PhD students and researchers. It connects research fields, detailed topics, foundational papers, open questions and scholarly discussions.
 
-**English AI Research Landscape:** https://xiangyue-8829.github.io/ai-research-atlas/research-framework-en.html
+AI Research Atlas 为有意攻读 AI 相关博士学位的读者和研究者提供可探索的研究知识地图、研究档案、专题论文入口与学术讨论空间。
 
-## Overview / 项目简介
+## Explore / 网站入口
 
-A bilingual, interactive map of AI research areas, methods, open questions and cross-disciplinary connections. The current taxonomy covers 7 research layers and 29 core areas. Its status notes are editorial research syntheses, not official rankings or a fully systematic review.
+- [Knowledge Graph · 知识图谱](https://xiangyue-8829.github.io/ai-research-atlas-preview/)
+- [Research Library · 研究档案](https://xiangyue-8829.github.io/ai-research-atlas-preview/research-index.html)
+- [Research Community · 研究社区](https://xiangyue-8829.github.io/ai-research-atlas-preview/community.html)
+- [AI Research Landscape · 中文研究框架](https://xiangyue-8829.github.io/ai-research-atlas-preview/research-framework.html)
+- [AI Research Landscape · English](https://xiangyue-8829.github.io/ai-research-atlas-preview/research-framework-en.html)
 
-中英文交互式人工智能研究知识地图，梳理研究方向、方法、开放问题与跨领域关系。目前的分类覆盖 7 个研究层与 29 个核心方向，现状判断为研究性整理，尚非穷尽文献的系统综述。
+## Structure / 项目结构
 
-## How to explore / 使用入口
+- `index.html`: main interactive knowledge graph / 研究知识图谱首页。
+- `research-index.html`: directory of 29 research fields / 29 个主要研究领域入口。
+- `research/<ID>/index.html`: stable field profiles / 各研究领域独立档案。
+- `topic.html`: topic dossier viewer / 细分专题档案页面。
+- `community.html`: research discussion UI / 学术讨论入口。
+- `ai_research_atlas_data_2026.json`: research taxonomy / 领域分类和关系。
+- `data/topic_catalog_v1.json`: curated topic notes / 首批专题内容及文献。
+- `data/community_config_v1.json`: GitHub Issues data repository / 社区数据仓库配置。
+- `sitemap.xml`: list of primary indexable pages.
 
-- [Interactive Atlas · 交互式研究地图](https://xiangyue-8829.github.io/ai-research-atlas/)
-- [Research Profiles · 研究档案](https://xiangyue-8829.github.io/ai-research-atlas/research_profiles.html)
-- [AI Research Landscape · 中文](https://xiangyue-8829.github.io/ai-research-atlas/research-framework.html)
-- [AI Research Landscape · English](https://xiangyue-8829.github.io/ai-research-atlas/research-framework-en.html)
+## Research quality / 内容定位
+
+Research maturity statements, suggested relations, and open problems are editorial syntheses, not official rankings or exhaustive systematic reviews. Refer to original publications for academic claims; hypotheses and community proposals are not automatically accepted as verified findings.
+
+研究现状、跨领域关联与开放问题属于编辑性综合整理，并非官方评级。论文与研究判断应明确引用来源；社区讨论未经审查不自动写入正式档案。
+
+## Community storage / 社区数据
+
+The current forum uses public GitHub Issues in **[https://github.com/Xiangyue-8829/ai-research-atlas-preview](https://github.com/Xiangyue-8829/ai-research-atlas-preview/issues)**. Posting or replying requires a GitHub account. Updating the website does not erase issues, but deleting the issue-hosting repository does.
+
+当前讨论记录保存在本仓库的 GitHub Issues；更新网页不会清空帖子，但删除 Issues 或所在仓库可能造成数据丢失。
 
 ## Maintenance / 维护
 
-- `ai_research_atlas_data_2026.json`: main taxonomy and relationships.
-- `atlas_en_2026.json`: English taxonomy texts.
-- `research_profiles_2026.json`, `research_profiles_en_2026.json`: research profiles.
-- `index.html`: interactive atlas and bilingual UI.
-- `research-framework*.html`: static, search-readable research framework summaries.
-- `sitemap.xml`: sitemap for Google Search Console / Bing Webmaster Tools.
+Keep the canonical URLs, `sitemap.xml`, and GitHub repository links aligned with https://xiangyue-8829.github.io/ai-research-atlas-preview/. Before renaming or deleting a repository, check Pages configuration, topic links, community backend, and search-engine properties.
 
-See [ROADMAP.md](ROADMAP.md) for future plans. This project is under development; changes should be evidence-linked and reviewed. No open-source license has been selected yet. Please choose appropriate licenses before accepting external contributions.
+See `README_DEPLOY.md` and `ROADMAP.md` for deployment and roadmap notes. This project remains under development; no open-source license has been selected yet.

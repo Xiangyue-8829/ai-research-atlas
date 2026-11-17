@@ -29,7 +29,7 @@
    - `/topic.html?domain=A5&slug=gmrf-spde&lang=zh`：SPDE 专题、论文、关联研究与术语解释。
    - `/topic.html?domain=E1&slug=mechanistic-interpretability&lang=zh`：机制可解释性专题。
 
-**目前不会自动更新真实线上站 `https://xiangyue-8829.github.io/ai-research-atlas/`**。预览通过后，再将同样的升级提交合并进原仓库的主分支。
+**当前网站以 `https://xiangyue-8829.github.io/ai-research-atlas-preview/` 为实际站点。旧仓库计划退役；请勿按旧说明将文件再合并回已废弃的原仓库。**
 
 ## 学术标记与维护
 

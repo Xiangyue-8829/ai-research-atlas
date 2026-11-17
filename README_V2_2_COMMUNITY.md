@@ -5,7 +5,7 @@
 1. **首页是唯一的知识图谱** (`index.html`)，`knowledge-graph.html` 仅保留兼容跳转，不再有两张重复图。
 2. 全站主要导航统一为 **知识图谱 / 研究档案 / 研究社区**。更改 `index.html`、`research-index.html`、`topic.html`，以及对应的 JS；所有 `research/<ID>/` 由共享 `research-profile.js` 自动生成第三个导航入口，**不必覆盖 29 个研究档案的 HTML**。
 3. 新增 `/community.html`：浏览 GitHub 公开议题、按学术讨论类型筛选、发起新的研究问题或论文推荐等；从领域和细分主题带入上下文。
-4. 社区后端目前使用 **正式仓库** `Xiangyue-8829/ai-research-atlas` 的公开 GitHub Issues；GitHub Pages 不需要服务器数据库，发帖和回复需要 GitHub 账号。所有内容公开，不会自动成为经核验的档案结论。
+4. 社区后端目前使用 **当前网站仓库** `Xiangyue-8829/ai-research-atlas-preview` 的公开 GitHub Issues；GitHub Pages 不需要服务器数据库，发帖和回复需要 GitHub 账号。所有内容公开，不会自动成为经核验的档案结论。
 
 ## 需要上传的文件（仅 12 个）
 
@@ -42,7 +42,7 @@
 
 访客在网站填写内容后，点击“前往 GitHub 完成发布”，会打开**预填写的 GitHub Issue 编辑页**；只有访客在 GitHub 页面最终提交，内容才真正发布。关闭页面或取消不会发布。
 
-使用正式仓库作为社区内容归属，避免从预览仓库迁移讨论记录；因此你以后将新网站部署到正式仓库时，无需搬迁社区讨论。
+讨论目前归属于 `Xiangyue-8829/ai-research-atlas-preview` 的 Issues。后续若更名或迁移仓库，需先核对社区配置与历史数据。
 
 ## GitHub Discussions / giscus 的下一阶段
 

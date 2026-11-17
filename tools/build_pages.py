@@ -6,7 +6,7 @@ from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://xiangyue-8829.github.io/ai-research-atlas"
+BASE_URL = "https://xiangyue-8829.github.io/ai-research-atlas-preview"
 FIELDS = [
     ('A1','统计学习理论','Statistical Learning Theory'),
     ('A2','机器学习优化','Optimization for Machine Learning'),

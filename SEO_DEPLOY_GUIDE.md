@@ -1,33 +1,52 @@
-# AI Research Atlas · SEO & Preview Update (2026-11-15)
+# AI Research Atlas — SEO 与站点迁移指南
 
-## What this upgrade includes
+**当前公开站点：** https://xiangyue-8829.github.io/ai-research-atlas-preview/
 
-- **index.html**: fixes UAI / ICML / other citation IDs that previously sent users to nonexistent `/uai` paths; preserves current fullscreen + Chinese/English functionality; adds SEO title/description, canonical URL, social preview metadata, and a link to a new search-readable framework page.
-- **research_profiles.html**: adds page-specific meta title, description, canonical URL, and social-preview metadata.
-- **research-framework.html**: public Chinese static research framework with 7 layers and 29 fields.
-- **research-framework-en.html**: public English framework, separate URL with hreflang alternatives.
-- **sitemap.xml**: four actual page URLs. Submit to Google Search Console and Bing Webmaster Tools; it does not guarantee indexing.
-- **AI_Research_Atlas_preview.png**: existing atlas screenshot used as OG preview image; can also be uploaded to repository Settings → Social preview.
-- **README.md**: prominently displays clickable live website and bilingual research framework links.
+**GitHub 仓库：** https://github.com/Xiangyue-8829/ai-research-atlas-preview
 
-## Deployment
+## 1. Canonical 与站点地址
 
-Upload extracted files into the root of the existing `Xiangyue-8829/ai-research-atlas` repository on `main` (NOT the ZIP itself). Replace the existing `index.html`, `research_profiles.html`, and `README.md`; add the two static guide files, `sitemap.xml`, and `AI_Research_Atlas_preview.png`. Keep all other JSON, SVG and research files. Check Actions → pages build and deployment (green check).
+所有主页面的 `<link rel="canonical">` 应与其真正 URL 一致，不要再指向已弃用的旧仓库网站。
 
-If GitHub web upload refuses replacing existing files, open the existing file, click Edit (pencil), paste the new full content, and commit; or use GitHub Desktop to copy and commit all files together.
+- 首页：`https://xiangyue-8829.github.io/ai-research-atlas-preview/`
+- 研究档案：`https://xiangyue-8829.github.io/ai-research-atlas-preview/research-index.html`
+- 研究社区：`https://xiangyue-8829.github.io/ai-research-atlas-preview/community.html`
+- 领域：`https://xiangyue-8829.github.io/ai-research-atlas-preview/research/A5/`（示例）
+- 静态研究框架：`https://xiangyue-8829.github.io/ai-research-atlas-preview/research-framework.html`、`research-framework-en.html`
 
-## GitHub About / Preview website link
+`knowledge-graph.html` 是旧图谱链接兼容页面；不应在 Sitemap 中作为第二个独立首页。
+细分专题页面有动态参数，不能将不带参数的 `topic.html` 一律作为完整研究档案提交。
 
-Go to Repository → Code → About (right sidebar) → gear/Edit → Website → `https://xiangyue-8829.github.io/ai-research-atlas/` → Save. Fill Description and add Topics such as `artificial-intelligence`, `research-map`, `machine-learning`, `knowledge-graph`, `ai-research`.
+## 2. Sitemap
 
-GitHub's repository **Social preview** is a *picture* for sharing a GitHub repo URL; upload `AI_Research_Atlas_preview.png` through Settings → Social preview. Its image is not a way to create a clickable site link. The clickable Website field belongs in the About section.
+在 GitHub Pages 根目录维护 `sitemap.xml`。包括当前主页、领域目录、研究社区、29 个领域页面。
 
-## Submit sitemap for discovery
+运行：
 
-- Google Search Console: create a **URL-prefix property** `https://xiangyue-8829.github.io/ai-research-atlas/`; verify ownership using an HTML verification file uploaded to the repo root or a meta tag provided by Google (do not fabricate tokens); submit `https://xiangyue-8829.github.io/ai-research-atlas/sitemap.xml` in Sitemaps; URL inspection → Request indexing.
-- Bing Webmaster Tools: add/verify the website; submit the same sitemap. URL submission is also available.
-- Baidu Search Resource Platform: add/verify when available, submit links; GitHub Pages accessibility from mainland China varies, so successful crawl/indexing cannot be guaranteed.
+```bash
+python tools/update_sitemap.py .
+```
 
-**Caveat:** A GitHub Pages *project site* cannot normally set the host-root `https://xiangyue-8829.github.io/robots.txt` from its `/ai-research-atlas/` repository. A `robots.txt` under the project path is not a substitute for the host-root robots.txt. Submit the XML sitemap explicitly in the webmaster tools.
+此脚本将统一采用当前发布站点 URL，并避免把已退役网址重新写入。
 
-**SEO limitations:** SEO metadata and sitemap do not ensure ranking, indexing or discovery. Google recommends distinct URLs for localized language versions; this package adds Chinese and English static framework URLs. The main interactive atlas still switches language client-side. Much of the canvas content is JS-rendered, so these static pages make domain terms easier to crawl. Rankings depend on crawlability, content quality, citations, incoming links, and search intent.
+## 3. Google Search Console / Bing Webmaster Tools
+
+为 `https://xiangyue-8829.github.io/ai-research-atlas-preview/` 建立对应的 URL-prefix 属性，按站长平台给出的验证方式确认所有权；提交：
+
+`https://xiangyue-8829.github.io/ai-research-atlas-preview/sitemap.xml`
+
+如已有旧属性，不要误以为新路径会自动继承原地址的所有验证和收录记录。
+
+## 4. GitHub About / Website
+
+在仓库首页右侧的 About → Edit，填写当前网站网址 `https://xiangyue-8829.github.io/ai-research-atlas-preview/`。
+
+## 5. 内容与权限
+
+公开网站、robots/sitemap 与 GitHub 仓库是不同的资源；不要把仓库路径修改理解成旧外部链接永久自动重定向。
+研究社区内容保存在 GitHub Issues；不要在未迁移讨论记录前删除当前 Issues 仓库。
+
+## 6. 遗留页面注意
+
+旧版静态页面 `research-framework.html`、`research-framework-en.html` 和 `research_profiles.html` 如果继续用于搜索收录，仍需后续单独更新其旧版 Canonical、Open Graph 与 JSON-LD 元信息。
+本次补丁针对当前 V2.2 活跃入口和 29 个领域档案，不以简化页面覆盖旧版研究内容。
