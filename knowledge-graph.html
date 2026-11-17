@@ -1,34 +1,21 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071326">
-  <meta name="description" content="Explore 29 core directions, 12 cross-field research bottlenecks and 66 editorial connections in the AI Research Atlas.">
-  <title>Knowledge Graph · AI Research Atlas</title>
-  <link rel="canonical" href="https://xiangyue-8829.github.io/ai-research-atlas/knowledge-graph.html">
-  <link rel="stylesheet" href="./assets/atlas-kg.css">
-  <script defer src="./assets/atlas-kg.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="./index.html">
+<title>知识图谱已迁移 · AI Research Atlas</title>
+<script>
+  // Keep lang/focus/query parameters and hash when returning to the unified graph homepage.
+  const target = new URL('./index.html', location.href);
+  target.search = location.search;
+  target.hash = location.hash;
+  location.replace(target.href);
+</script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="./index.html" aria-label="AI Research Atlas 首页"><span class="brand-mark">◎</span><span>AI Research Atlas <small>KNOWLEDGE GRAPH</small></span></a>
-    <nav aria-label="主导航"><a href="./index.html" data-i18n="overview">研究地图</a><a href="./knowledge-graph.html" class="current" aria-current="page" data-i18n="graph">知识图谱</a><a href="./research-index.html" data-i18n="legacy">研究档案</a></nav>
-    <button type="button" id="language-switch" class="outline-button" aria-label="Switch language">EN</button>
-  </header>
-  <main>
-    <section class="intro"><div><p class="eyebrow">INTERACTIVE RESEARCH MAP · 2026</p><h1 data-i18n="heading">探索 AI 研究领域之间的联系</h1><p class="lead" data-i18n="subtitle">从宏观研究领域进入具体研究档案。连线表示经过编辑整理的学术关联，而非因果方向或已验证依赖。</p></div><div class="statline"><span><b id="stat-domains">29</b><small data-i18n="domains">研究方向</small></span><span><b id="stat-links">66</b><small data-i18n="relations">领域关联</small></span><span><b id="stat-problems">12</b><small data-i18n="bottlenecks">研究瓶颈</small></span></div></section>
-    <section class="workspace" aria-label="Research knowledge graph">
-      <div class="visual-column">
-        <div class="toolbar"><label class="search-wrap"><span class="visually-hidden" data-i18n="search">搜索方向与主题</span><span aria-hidden="true">⌕</span><input id="query" type="search" placeholder="搜索研究方向或研究主题" autocomplete="off" aria-label="Search research fields"></label><div class="toolgroup"><button id="mode-fields" class="pill selected" type="button" data-i18n="fieldsMode">领域网络</button><button id="mode-problems" class="pill" type="button" data-i18n="problemsMode">瓶颈网络</button></div><div class="toolgroup"><button id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in">＋</button><button id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out">−</button><button id="reset" type="button" data-i18n="reset">复位</button></div></div>
-        <div id="layer-filters" class="filters" aria-label="Research layer filters"></div>
-        <div class="graph-stage"><svg id="research-graph" role="img" aria-label="Interactive research graph" viewBox="0 0 1440 920" xmlns="http://www.w3.org/2000/svg"><title>AI research knowledge graph</title><g id="graph-world"><g id="edge-layer"></g><g id="node-layer"></g></g></svg><div class="graph-hint" data-i18n="instructions">拖动画布平移 · 滚轮缩放 · 点击节点探索</div><div id="graph-status" class="graph-status" role="status" aria-live="polite">正在加载研究数据…</div></div>
-        <div class="bottom-bar"><span><i class="legend-dot domain-dot"></i><span data-i18n="legendField">研究方向</span></span><span><i class="legend-dot problem-dot"></i><span data-i18n="legendProblem">跨领域瓶颈</span></span><span><i class="legend-line"></i><span data-i18n="legendLink">编辑性关联</span></span><label class="motion-toggle"><input type="checkbox" id="motion" checked><span data-i18n="motion">关系动态高亮</span></label></div>
-      </div>
-      <aside class="inspector" id="inspector" aria-live="polite"><p class="eyebrow" data-i18n="inspectorLabel">RESEARCH INSPECTOR</p><div id="inspector-content"><h2 data-i18n="inspectorTitle">选择研究节点</h2><p class="muted" data-i18n="inspectorHelp">点击地图中的研究方向，查看研究问题、关键主题、关联节点，以及独立研究档案入口。</p></div></aside>
-    </section>
-    <p class="method-note" data-i18n="caveat">资料来源：现有 AI Research Atlas 分类及编辑性关联。研究状态和跨领域关系不是定量测量或官方评级；尚未逐项完成外部证据核验。</p>
-  </main>
-  <footer><span>AI Research Atlas · Living Research Map</span><span>Research content is editorial; cite original publications for scholarly claims.</span></footer>
+<p>知识图谱现已作为网站首页。<a href="./index.html">点击这里进入 AI Research Atlas 知识图谱</a>。</p>
+<noscript><p>JavaScript 已关闭，请点击上方链接。</p></noscript>
 </body>
 </html>

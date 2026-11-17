@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081425">
+<meta name="description" content="AI Research Atlas scholarly discussion hub: research questions, recommended papers, methodology critiques, cross-disciplinary ideas, and corrections.">
+<title>研究社区 · AI Research Atlas</title>
+<link rel="stylesheet" href="./assets/research-profile.css"><link rel="stylesheet" href="./assets/community.css">
+<script defer src="./assets/community.js"></script>
+</head>
+<body>
+<header class="header"><a class="brand" href="./index.html">◎ AI Research Atlas</a>
+<nav class="nav" aria-label="Site navigation"><a id="nav-graph" href="./index.html">知识图谱</a><a id="nav-library" href="./research-index.html">研究档案</a><a id="nav-community" href="./community.html" aria-current="page">研究社区</a><button type="button" id="lang" aria-label="Switch language">EN</button></nav></header>
+<main class="shell community-shell">
+<section class="hero community-hero"><p class="eyebrow">RESEARCH COMMUNITY · BETA</p>
+<h1 id="page-title">研究社区</h1>
+<p id="page-intro" class="summary">围绕值得研究的问题展开有依据的讨论：提出研究想法、推荐论文、质疑方法假设，并连接不同 AI 研究领域。</p>
+<div class="community-context" id="context" hidden></div>
+<p class="platform-note" id="platform-note">当前讨论由 GitHub Issues 承载。阅读无需登录，发帖与回复需要 GitHub 账号；讨论内容公开。</p>
+</section>
+<div class="community-layout">
+<section class="community-primary" aria-label="Research discussions">
+<div class="section-head"><div><p class="eyebrow">ACTIVE CONVERSATIONS</p><h2 id="feed-heading">最近讨论</h2></div><a id="all-threads" class="simple-link" href="https://github.com/Xiangyue-8829/ai-research-atlas/issues" target="_blank" rel="noopener noreferrer">在 GitHub 查看所有讨论 ↗</a></div>
+<div class="community-filters"><label for="filter" id="filter-label">按类型筛选</label><select id="filter"><option value="all">全部研究讨论</option><option value="research-question">研究问题</option><option value="paper-recommendation">论文推荐</option><option value="methodological-critique">方法批评</option><option value="cross-field-connection">跨领域联系</option><option value="correction">纠错与补充</option></select></div>
+<div id="thread-feed" class="thread-feed" aria-live="polite" role="status"><p class="muted">正在载入 GitHub 公开讨论…</p></div>
+</section>
+<aside class="community-side">
+<section class="aside-card compose-card" id="compose"><p class="eyebrow">CONTRIBUTE</p><h2 id="compose-heading">发起研究讨论</h2>
+<form id="discussion-form" autocomplete="off">
+<label for="contribution-type" id="type-label">讨论类型</label>
+<select id="contribution-type" required>
+<option value="research-question">研究问题</option>
+<option value="paper-recommendation">论文推荐</option>
+<option value="methodological-critique">方法批评</option>
+<option value="cross-field-connection">跨领域联系</option>
+<option value="correction">纠错与补充</option>
+</select>
+<label for="discussion-title" id="title-label">主题标题</label><input id="discussion-title" type="text" maxlength="180" required placeholder="例如：INLA-SPDE 如何用于在线推断？">
+<label for="discussion-body" id="body-label">研究问题或观点</label><textarea id="discussion-body" maxlength="8000" required rows="5" placeholder="研究背景、具体问题、拟议方法或希望讨论的证据…"></textarea>
+<label for="discussion-source" id="source-label">参考论文 DOI / URL（可选）</label><input id="discussion-source" type="text" maxlength="1200" placeholder="https://doi.org/...">
+<label for="evidence-status" id="evidence-label">证据性质</label><select id="evidence-status"><option value="hypothesis">探索性假设 / 想法</option><option value="literature">引用文献的研究主张</option><option value="question">尚待验证的问题</option></select>
+<button type="submit" id="submit" class="primary-action">前往 GitHub 完成发布 ↗</button>
+</form>
+<p class="small-muted" id="compose-hint">本站不会直接保存表单内容。点击后会打开 GitHub 的公开议题编辑页，你可以检查并决定是否正式提交。</p>
+</section>
+<section class="aside-card"><h3 id="rules-heading">学术交流原则</h3><ul id="rules" class="rules"><li>陈述研究主张时提供原始文献。</li><li>区分事实、研究假设与个人判断。</li><li>批评方法而非人；禁止骚扰与垃圾信息。</li><li>未经审查的社区讨论不自动写入正式档案。</li></ul></section>
+</aside></div>
+<section class="community-next"><h2 id="next-heading">研究档案与讨论如何连接？</h2><p id="next-description">从任一研究领域或细分专题进入这里时，系统会自动携带对应主题，方便讨论聚焦到具体问题。正式研究档案仍由维护者核验后更新。</p></section>
+</main><footer>AI Research Atlas · Research Community <span id="footer-note">Community contributions are public and not automatically verified.</span></footer>
+</body></html>
