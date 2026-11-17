@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "policy": {
+    "relation_id": "R-{lexicographically_smaller_domain_id}--{larger_domain_id}--{existing_relation_type}",
+    "default_status": "editorial_unverified",
+    "statuses": ["editorial_unverified", "source_supported", "contested", "retracted"],
+    "rule": "An edge in the editorial atlas is not evidence of causal direction. Change status to source_supported only after checking precise statements against linked sources; record review date and curator."
+  },
+  "sources": {},
+  "relations": {},
+  "example_not_active": {
+    "R-A5--G1--intersection": {
+      "status": "editorial_unverified",
+      "source_ids": [],
+      "reviewed_at": null,
+      "reviewer": null,
+      "note": "This is a schema example only, not a verified claim."
+    }
+  }
+}

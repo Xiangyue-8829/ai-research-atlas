@@ -1,0 +1,630 @@
+{
+  "schema_version": "1.0",
+  "language": "en",
+  "methodology": "The taxonomy draws on the published topics of major AI conferences. Research maturity and open questions are editorial syntheses, not official conference ratings or quantitative measurements.",
+  "layers": {
+    "A": "Mathematical foundations of learning from finite data, optimization, and causal identification.",
+    "B": "Model structures for representing observations, distributions, and knowledge.",
+    "C": "Interpreting visual, audio, language, and structured observations.",
+    "D": "Reasoning, planning, deciding, and acting in environments.",
+    "E": "Evaluating, explaining, and safeguarding AI behavior.",
+    "F": "Efficient, privacy-preserving, and large-scale AI computation.",
+    "G": "Scientific discovery, physical modeling, and insights from brains and cognition."
+  },
+  "domains": {
+    "A1": {
+      "progress": "PAC learning, generalization bounds, and sample complexity have established theoretical foundations; understanding modern deep networks remains an active research area.",
+      "questions": [
+        "How can we derive tight generalization bounds for overparameterized networks?",
+        "What guarantees are possible for out-of-distribution and interactive data?",
+        "How should the statistical complexity of learned representations be measured?"
+      ]
+    },
+    "A2": {
+      "progress": "SGD, Adam, and related optimizers are widely used; the dynamics and efficiency of large-scale nonconvex training remain active topics.",
+      "questions": [
+        "What theory can explain optimization in large nonconvex models?",
+        "How can training stability, computation, and optimality be balanced?",
+        "Under what conditions does stochastic optimization converge on heterogeneous data?"
+      ]
+    },
+    "A3": {
+      "progress": "Supervised and unsupervised learning have mature toolkits; self-supervised, active, and weak supervision continue to expand.",
+      "questions": [
+        "How can learning depend less on human annotations?",
+        "How should noise and bias in weak supervision be addressed?",
+        "How can the most informative samples be selected efficiently?"
+      ]
+    },
+    "A4": {
+      "progress": "Large-scale pretraining has improved transfer, but continual adaptation, representation stability, and identifiability remain challenging.",
+      "questions": [
+        "Which invariant factors can be shared across tasks?",
+        "How can catastrophic forgetting be reduced during continual learning?",
+        "When can transferability of a representation be established?"
+      ]
+    },
+    "A5": {
+      "progress": "Probabilistic modeling and MCMC have mature foundations; scalable inference for complex latent, non-Gaussian, and neural models remains active.",
+      "questions": [
+        "How can high-dimensional posterior approximation balance speed and accuracy?",
+        "Is uncertainty reliable under model misspecification?",
+        "How can inference be performed for implicit generative processes?"
+      ]
+    },
+    "A6": {
+      "progress": "Potential-outcome and graphical identification theories are established; high-dimensional confounding, interference, spatial-temporal causality, and causal representations remain active.",
+      "questions": [
+        "What can be concluded when observational data do not identify a causal effect?",
+        "How do interference and distribution shift affect causal estimands?",
+        "What causal meaning can be assigned to neural representations?"
+      ]
+    },
+    "B1": {
+      "progress": "Transformers, CNNs, and state-space neural networks are widely studied; efficiency, long-context processing, and inductive bias remain central.",
+      "questions": [
+        "Which architectures capture long-range dependencies most efficiently?",
+        "How can expressiveness and interpretability be balanced?",
+        "How can training and inference costs be reduced?"
+      ]
+    },
+    "B2": {
+      "progress": "Diffusion, flow matching, and autoregressive generation have made major advances; controllability, probabilistic evaluation, and long-horizon consistency remain open.",
+      "questions": [
+        "Does realistic generation imply accurate physical world dynamics?",
+        "How should uncertainty in generated outcomes be quantified?",
+        "How can fine-grained conditional control be achieved?"
+      ]
+    },
+    "B3": {
+      "progress": "GNNs and graph structure-learning tools are increasingly capable; long-range interactions, transferability, and structural uncertainty remain challenges.",
+      "questions": [
+        "How can message passing capture long-range dependencies?",
+        "How can an unknown graph structure be learned efficiently?",
+        "How should probabilistic graphical inference connect with GNNs?"
+      ]
+    },
+    "B4": {
+      "progress": "General-purpose pretraining and adaptation have broadened model capabilities; cross-task reliability, data efficiency, and evaluation are increasingly important.",
+      "questions": [
+        "What transferable knowledge does pretraining acquire?",
+        "Do scaling laws generalize across modalities and data regimes?",
+        "How can genuine generalization be measured?"
+      ]
+    },
+    "B5": {
+      "progress": "Symbolic logic and automated reasoning have established foundations; combining neural representations with verifiable symbolic reasoning remains exploratory.",
+      "questions": [
+        "How can continuous neural representations be connected to discrete rules?",
+        "How can reasoning remain reliable with uncertain knowledge?",
+        "How can symbolic knowledge be learned and updated automatically?"
+      ]
+    },
+    "C1": {
+      "progress": "2D recognition and detection have mature toolkits; 3D understanding, dynamic scenes, and physical spatial reasoning remain active.",
+      "questions": [
+        "How can real 3D structure be inferred from limited viewpoints?",
+        "How should models handle occlusion and changing environments?",
+        "How can videos maintain spatiotemporal consistency?"
+      ]
+    },
+    "C2": {
+      "progress": "Language pretraining has made substantial advances; semantic reliability, long-document comprehension, and multilingual access remain important.",
+      "questions": [
+        "How can language understanding be distinguished from memorization?",
+        "Can long-context systems reason consistently?",
+        "How can low-resource languages receive equitable capabilities?"
+      ]
+    },
+    "C3": {
+      "progress": "Speech recognition and synthesis are widely deployed; complex soundscapes, cross-lingual transfer, and robustness remain open.",
+      "questions": [
+        "How can speech separation and recognition improve under noise?",
+        "How can the causal structure of acoustic events be learned?",
+        "How can audio be integrated reliably with other modalities?"
+      ]
+    },
+    "C4": {
+      "progress": "Vision-language and audiovisual models are advancing rapidly; cross-modal grounding and compositional reasoning remain difficult.",
+      "questions": [
+        "How can multiple modalities represent the same physical entities?",
+        "Does cross-modal alignment support causal inference?",
+        "How can reasoning remain reliable when a modality is missing?"
+      ]
+    },
+    "C5": {
+      "progress": "Search and recommendation are highly developed in industry; feedback loops, selection bias, and long-term impact remain difficult to evaluate.",
+      "questions": [
+        "How do recommendation exposures change the observed data distribution?",
+        "How can feedback-loop bias be avoided?",
+        "How can knowledge bases be updated and verified continuously?"
+      ]
+    },
+    "C6": {
+      "progress": "Classical statistical models are mature; time-series foundation models, nonstationary generalization, and high-dimensional spatiotemporal learning remain active.",
+      "questions": [
+        "How can predictive reliability be preserved under nonstationarity?",
+        "How should irregular sampling and missingness be modeled?",
+        "How should uncertainty in long-range forecasting be represented?"
+      ]
+    },
+    "D1": {
+      "progress": "Classical search, logic, and planning are mature; verifiable multistep reasoning in dynamic settings remains difficult.",
+      "questions": [
+        "How should symbolic search be combined with neural reasoning?",
+        "How can plans be made under uncertainty and partial observability?",
+        "How can long reasoning chains be verified?"
+      ]
+    },
+    "D2": {
+      "progress": "Classical MDP and control theories are mature, and deep RL is widely studied; sample efficiency, safety, and long-term generalization remain priorities.",
+      "questions": [
+        "How can the cost of real-world interaction be reduced?",
+        "How can offline data support safe policy improvement?",
+        "How can policy transfer into new environments be validated?"
+      ]
+    },
+    "D3": {
+      "progress": "Tool use and computer-interaction capabilities are improving rapidly; long-term reliability, memory, and multi-agent coordination remain weak points.",
+      "questions": [
+        "How can errors during long tasks be detected and repaired?",
+        "How can multiple agents coordinate without unstable behavior?",
+        "How should task capabilities and associated risks be evaluated?"
+      ]
+    },
+    "D4": {
+      "progress": "Performance in controlled environments is improving, but complex household tasks and real-world deployment still show substantial gaps.",
+      "questions": [
+        "How can policies learned in simulation transfer safely?",
+        "How can contact-rich manipulation be executed reliably?",
+        "How can errors be prevented from accumulating in long tasks?"
+      ]
+    },
+    "D5": {
+      "progress": "Environment dynamics and action-conditioned generation are active areas; long-horizon prediction, consistency, and planning utility lack unified evaluation.",
+      "questions": [
+        "Does realistic generation reflect accurate dynamics?",
+        "How can long-horizon counterfactual predictions be evaluated?",
+        "What kinds of world models are most useful for planning?"
+      ]
+    },
+    "E1": {
+      "progress": "Robustness, calibration, and explanation methods are diverse; mechanistic validity, OOD reliability, and safety constraints remain challenging.",
+      "questions": [
+        "How can uncertainty estimates remain valid under distribution shift?",
+        "Do explanations capture correlations or causal mechanisms?",
+        "How can model safety be verified systematically?"
+      ]
+    },
+    "E2": {
+      "progress": "Model capabilities change faster than some benchmarks; data contamination, experimental design, and evaluation validity are increasingly important.",
+      "questions": [
+        "How can genuine ability be measured when benchmarks saturate?",
+        "Do evaluation metrics match real-world objectives?",
+        "How can data contamination and spurious progress be prevented?"
+      ]
+    },
+    "E3": {
+      "progress": "Human-AI interaction and governance are maturing; fairness, transparency, and accountability depend heavily on context.",
+      "questions": [
+        "How should long-term outcomes of human-AI collaboration be evaluated?",
+        "How should competing stakeholder interests be balanced?",
+        "How can AI decisions remain open to societal oversight?"
+      ]
+    },
+    "F1": {
+      "progress": "GPU training, quantization, and inference optimization have mature practical methods and remain active; energy and resource constraints continue to evolve.",
+      "questions": [
+        "How can models be compressed while preserving quality?",
+        "How can latency be reduced for long-context and real-time inference?",
+        "How can complex models be deployed on resource-limited devices?"
+      ]
+    },
+    "F2": {
+      "progress": "Federated learning and differential privacy have established theory and deployments; privacy–utility tradeoffs and heterogeneous clients remain difficult.",
+      "questions": [
+        "How does the privacy budget affect utility in practice?",
+        "How can heterogeneous client data be used fairly?",
+        "How can distributed training resist attacks?"
+      ]
+    },
+    "G1": {
+      "progress": "Applications in proteins, materials, climate, and scientific simulation are expanding; validation, extrapolation, and closed-loop discovery remain central challenges.",
+      "questions": [
+        "How can physical laws be integrated with data-driven learning?",
+        "How can proposed scientific discoveries be verified experimentally?",
+        "How can reliable extrapolation be maintained with scarce scientific data?"
+      ]
+    },
+    "G2": {
+      "progress": "Computational neuroscience and cognitive modeling increasingly intersect with AI; mapping biological mechanisms to verifiable AI designs remains contested.",
+      "questions": [
+        "Which neural mechanisms are useful as algorithmic inspiration?",
+        "How do neural and behavioral mechanisms correspond to model computations?",
+        "How can cognitive capabilities be tested causally?"
+      ]
+    }
+  },
+  "problems": {
+    "P1": {
+      "description": "Models can fail on unseen tasks, environments, or data distributions.",
+      "question": "Which invariances genuinely support transfer across environments?"
+    },
+    "P2": {
+      "description": "Annotation, simulation, interaction, and experimental data can be costly.",
+      "question": "How can models learn from fewer but more informative examples?"
+    },
+    "P3": {
+      "description": "Computational costs constrain high-dimensional optimization, inference, and deployment.",
+      "question": "How can precision and speed be balanced under hard resource limits?"
+    },
+    "P4": {
+      "description": "Reported probabilities or confidence scores do not always match actual error risk.",
+      "question": "How can uncertainty estimates remain reliable as data structures change?"
+    },
+    "P5": {
+      "description": "Errors can propagate through extended prediction and action sequences.",
+      "question": "How can deviations in long trajectories be detected and corrected?"
+    },
+    "P6": {
+      "description": "Statistical association does not guarantee correct predictions under intervention.",
+      "question": "How can testable mechanisms and counterfactual models be established?"
+    },
+    "P7": {
+      "description": "Learned representations may lack stable semantics or compositional structure.",
+      "question": "Which representations support compositional generalization?"
+    },
+    "P8": {
+      "description": "Changing tasks and environments can degrade performance or cause forgetting.",
+      "question": "When should a model adapt, and how can catastrophic forgetting be avoided?"
+    },
+    "P9": {
+      "description": "Benchmarks may not reflect real abilities, and research results may be hard to reproduce.",
+      "question": "How can tests achieve construct validity and reproducibility?"
+    },
+    "P10": {
+      "description": "Multiple agents, competing goals, and real-world deployment introduce new risks.",
+      "question": "How can conflicting objectives be reconciled and safety boundaries tested?"
+    },
+    "P11": {
+      "description": "Visually plausible outputs are not necessarily physically feasible.",
+      "question": "How can dynamics constrained by physical laws be learned from observations?"
+    },
+    "P12": {
+      "description": "Knowledge can become stale, and multistep reasoning can contain hidden errors.",
+      "question": "How can external knowledge and multistep reasoning be validated?"
+    }
+  },
+  "links": [
+    {
+      "a": "A1",
+      "b": "A4",
+      "why": "Generalization theory ↔ transferable representations"
+    },
+    {
+      "a": "A1",
+      "b": "B4",
+      "why": "Scaling and generalization"
+    },
+    {
+      "a": "A1",
+      "b": "E1",
+      "why": "Reliability bounds"
+    },
+    {
+      "a": "A2",
+      "b": "B1",
+      "why": "Neural network optimization"
+    },
+    {
+      "a": "A2",
+      "b": "F1",
+      "why": "Efficient training systems"
+    },
+    {
+      "a": "A2",
+      "b": "D2",
+      "why": "Policy optimization"
+    },
+    {
+      "a": "A3",
+      "b": "B4",
+      "why": "Self-supervised pretraining"
+    },
+    {
+      "a": "A3",
+      "b": "D4",
+      "why": "Low-label robot learning"
+    },
+    {
+      "a": "A4",
+      "b": "C4",
+      "why": "Cross-modal representations"
+    },
+    {
+      "a": "A4",
+      "b": "D4",
+      "why": "Sim-to-real transfer"
+    },
+    {
+      "a": "A4",
+      "b": "D5",
+      "why": "State representation learning"
+    },
+    {
+      "a": "A5",
+      "b": "B3",
+      "why": "Structured probabilistic graph inference"
+    },
+    {
+      "a": "A5",
+      "b": "C6",
+      "why": "State-space models and probabilistic forecasting"
+    },
+    {
+      "a": "A5",
+      "b": "D4",
+      "why": "Bayesian state estimation"
+    },
+    {
+      "a": "A5",
+      "b": "D5",
+      "why": "Dynamic uncertainty"
+    },
+    {
+      "a": "A5",
+      "b": "E1",
+      "why": "Posterior and predictive uncertainty"
+    },
+    {
+      "a": "A5",
+      "b": "G1",
+      "why": "Bayesian inverse problems"
+    },
+    {
+      "a": "A6",
+      "b": "E1",
+      "why": "Causal interpretability"
+    },
+    {
+      "a": "A6",
+      "b": "D2",
+      "why": "Counterfactual policy evaluation"
+    },
+    {
+      "a": "A6",
+      "b": "D5",
+      "why": "Intervention-aware dynamics"
+    },
+    {
+      "a": "A6",
+      "b": "C5",
+      "why": "Recommendation exposure bias"
+    },
+    {
+      "a": "A6",
+      "b": "G2",
+      "why": "Mechanism identification"
+    },
+    {
+      "a": "B1",
+      "b": "B4",
+      "why": "Architectures enabling foundation models"
+    },
+    {
+      "a": "B1",
+      "b": "F1",
+      "why": "Compute–architecture co-design"
+    },
+    {
+      "a": "B1",
+      "b": "C1",
+      "why": "Visual neural networks"
+    },
+    {
+      "a": "B2",
+      "b": "D5",
+      "why": "Generation and environment simulation"
+    },
+    {
+      "a": "B2",
+      "b": "C1",
+      "why": "Image and video generation"
+    },
+    {
+      "a": "B2",
+      "b": "G1",
+      "why": "Molecular and scientific generation"
+    },
+    {
+      "a": "B3",
+      "b": "C5",
+      "why": "Knowledge graphs and recommendation"
+    },
+    {
+      "a": "B3",
+      "b": "G1",
+      "why": "Molecular and scientific graph representations"
+    },
+    {
+      "a": "B3",
+      "b": "D4",
+      "why": "Factor graphs and SLAM"
+    },
+    {
+      "a": "B3",
+      "b": "B5",
+      "why": "Structured knowledge and logic"
+    },
+    {
+      "a": "B4",
+      "b": "C2",
+      "why": "Language foundation models"
+    },
+    {
+      "a": "B4",
+      "b": "C4",
+      "why": "Multimodal foundation models"
+    },
+    {
+      "a": "B4",
+      "b": "D3",
+      "why": "Foundation-model capabilities for agents"
+    },
+    {
+      "a": "B4",
+      "b": "D4",
+      "why": "Embodied foundation models"
+    },
+    {
+      "a": "B5",
+      "b": "D1",
+      "why": "Symbolic search and reasoning"
+    },
+    {
+      "a": "B5",
+      "b": "D3",
+      "why": "Neuro-symbolic agents"
+    },
+    {
+      "a": "C1",
+      "b": "C4",
+      "why": "Visual multimodality"
+    },
+    {
+      "a": "C1",
+      "b": "D4",
+      "why": "Robot perception"
+    },
+    {
+      "a": "C1",
+      "b": "D5",
+      "why": "Visual world state"
+    },
+    {
+      "a": "C2",
+      "b": "D3",
+      "why": "Language-driven agents"
+    },
+    {
+      "a": "C2",
+      "b": "C5",
+      "why": "Retrieval augmentation"
+    },
+    {
+      "a": "C2",
+      "b": "E2",
+      "why": "Evaluation of language capabilities"
+    },
+    {
+      "a": "C3",
+      "b": "C4",
+      "why": "Audio multimodality"
+    },
+    {
+      "a": "C4",
+      "b": "D4",
+      "why": "Vision–language–action"
+    },
+    {
+      "a": "C4",
+      "b": "D5",
+      "why": "Multimodal world dynamics"
+    },
+    {
+      "a": "C5",
+      "b": "E2",
+      "why": "Information quality and retrieval evaluation"
+    },
+    {
+      "a": "C6",
+      "b": "D5",
+      "why": "Temporal dynamics models"
+    },
+    {
+      "a": "C6",
+      "b": "G1",
+      "why": "Scientific spatiotemporal prediction"
+    },
+    {
+      "a": "D1",
+      "b": "D2",
+      "why": "Planning and action optimization"
+    },
+    {
+      "a": "D1",
+      "b": "D3",
+      "why": "Agent task planning"
+    },
+    {
+      "a": "D2",
+      "b": "D4",
+      "why": "Robot reinforcement learning"
+    },
+    {
+      "a": "D2",
+      "b": "D5",
+      "why": "Model-based reinforcement learning"
+    },
+    {
+      "a": "D3",
+      "b": "E2",
+      "why": "Evaluation of long-horizon agent tasks"
+    },
+    {
+      "a": "D3",
+      "b": "E1",
+      "why": "Verifiable actions"
+    },
+    {
+      "a": "D3",
+      "b": "E3",
+      "why": "Human-AI collaboration"
+    },
+    {
+      "a": "D4",
+      "b": "E1",
+      "why": "Safe control"
+    },
+    {
+      "a": "D4",
+      "b": "G1",
+      "why": "Physical modeling"
+    },
+    {
+      "a": "D5",
+      "b": "G1",
+      "why": "Scientific simulation and digital twins"
+    },
+    {
+      "a": "E1",
+      "b": "E2",
+      "why": "Calibration and capability verification"
+    },
+    {
+      "a": "E1",
+      "b": "F2",
+      "why": "Privacy and reliability"
+    },
+    {
+      "a": "E2",
+      "b": "G1",
+      "why": "Scientific reproducibility"
+    },
+    {
+      "a": "F1",
+      "b": "B4",
+      "why": "Large-scale model execution"
+    },
+    {
+      "a": "F2",
+      "b": "C5",
+      "why": "Distributed personalization"
+    },
+    {
+      "a": "G1",
+      "b": "G2",
+      "why": "Neuroscience and scientific modeling"
+    }
+  ]
+}

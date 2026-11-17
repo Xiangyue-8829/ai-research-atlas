@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.1-pilot",
+  "last_reviewed": "2026-11-15",
+  "status": "pilot / editorial research synthesis",
+  "policy": {
+    "evidence_labels": [
+      "文献明确指出",
+      "归纳",
+      "研究假设"
+    ],
+    "caveat": "研究假设为探索性研究想法，不等于已经验证的结果。仅首批三个主题；其他方向仍沿用 V1.0 概览。"
+  },
+  "sources": {
+    "dreamer": {
+      "title": "Mastering Diverse Domains through World Models",
+      "year": 2025,
+      "kind": "同行评审论文",
+      "venue": "Nature",
+      "url": "https://www.nature.com/articles/s41586-025-08744-2"
+    },
+    "genie": {
+      "title": "Genie 3: A New Frontier for World Models",
+      "year": 2025,
+      "kind": "研究团队技术公告",
+      "venue": "Google DeepMind",
+      "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/"
+    },
+    "circuit": {
+      "title": "Circuit Tracing: Revealing Computational Graphs in Language Models",
+      "year": 2025,
+      "kind": "研究技术报告",
+      "venue": "Transformer Circuits",
+      "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html"
+    },
+    "biology": {
+      "title": "On the Biology of a Large Language Model",
+      "year": 2025,
+      "kind": "研究技术报告",
+      "venue": "Transformer Circuits",
+      "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html"
+    },
+    "amort": {
+      "title": "Neural Methods for Amortized Inference",
+      "year": 2025,
+      "kind": "同行评审综述",
+      "venue": "Annual Review of Statistics and Its Application",
+      "url": "https://www.annualreviews.org/content/journals/10.1146/annurev-statistics-112723-034123"
+    },
+    "sbibm": {
+      "title": "Benchmarking Simulation-Based Inference",
+      "year": 2021,
+      "kind": "同行评审论文",
+      "venue": "AISTATS / PMLR",
+      "url": "https://proceedings.mlr.press/v130/lueckmann21a.html"
+    },
+    "sbc": {
+      "title": "Simulation-based Calibration (sbi Documentation)",
+      "year": null,
+      "kind": "项目技术文档",
+      "venue": "sbi",
+      "url": "https://sbi.readthedocs.io/en/stable/advanced_tutorials/11_diagnostics_simulation_based_calibration.html"
+    }
+  },
+  "profiles": [
+    {
+      "id": "D5",
+      "slug": "world-models",
+      "zh": "世界模型",
+      "en": "World Models",
+      "scope": "学习可支持预测、规划与行动的环境动态；不能简单等同于生成视频。",
+      "question": "如何在部分可观测、动态变化的环境中构建对行动后果预测可靠的内部模型？",
+      "math": "p(zₜ₊₁ | zₜ, aₜ),   p(oₜ | zₜ)",
+      "status": "模型式强化学习与实时交互环境生成均取得明显进展；长时预测、反事实动作与真实决策可靠性仍未解决。",
+      "methods": [
+        [
+          "潜在动力学模型",
+          "将高维观测压缩为可递推的隐状态。"
+        ],
+        [
+          "Model-based RL",
+          "使用学习得到的动态模型进行规划、想象轨迹或策略优化。"
+        ],
+        [
+          "Action-conditioned Simulation",
+          "给定动作预测未来观测或环境状态。"
+        ],
+        [
+          "Physics-aware Dynamics",
+          "利用物理约束或结构先验增强外推能力。"
+        ]
+      ],
+      "timeline": [
+        [
+          "2025 · DreamerV3",
+          "模型式强化学习在多类任务上通过统一配置进行验证。",
+          [
+            "dreamer"
+          ]
+        ],
+        [
+          "2025 · Genie 3",
+          "公开展示可实时交互的环境生成；团队也说明了交互时长和控制范围等限制。",
+          [
+            "genie"
+          ]
+        ]
+      ],
+      "bottlenecks": [
+        [
+          "长期误差积累",
+          "递推模型一步预测的偏差可能在长时轨迹中放大；需要测量时间尺度与规划效用。",
+          "归纳",
+          [
+            "dreamer",
+            "genie"
+          ]
+        ],
+        [
+          "动作与反事实泛化",
+          "训练策略未充分覆盖的动作可能导致模型外推失败。",
+          "研究假设",
+          [
+            "genie"
+          ]
+        ],
+        [
+          "视觉逼真与控制有效性的差距",
+          "视觉质量本身不保证学得的状态转移适用于闭环控制。",
+          "归纳",
+          [
+            "dreamer",
+            "genie"
+          ]
+        ],
+        [
+          "不确定性敏感规划",
+          "需要研究不同不确定性来源如何影响 rollout 长度与行为风险。",
+          "研究假设",
+          [
+            "dreamer"
+          ]
+        ]
+      ],
+      "links": [
+        [
+          "D2",
+          "强化学习：基于模型的策略优化"
+        ],
+        [
+          "D4",
+          "机器人：状态估计、规划与控制"
+        ],
+        [
+          "B2",
+          "生成模型：视频模拟与行动条件生成"
+        ],
+        [
+          "A5",
+          "贝叶斯机器学习：动态推断与不确定性"
+        ]
+      ],
+      "opportunities": [
+        [
+          "置信度自适应规划",
+          "将模型校准误差与动态规划时域联动，并在分布转移条件下测试。",
+          "不能由经验校准直接推导形式化安全保证。"
+        ],
+        [
+          "基于行动干预的世界模型测评",
+          "比较视觉拟真分数、动作预测误差与闭环任务效用之间的关系。",
+          "真实环境中的反事实结果不一定可观测。"
+        ]
+      ]
+    },
+    {
+      "id": "E1",
+      "slug": "mechanistic-interpretability",
+      "zh": "机制可解释性",
+      "en": "Mechanistic Interpretability",
+      "scope": "识别并验证神经网络内部计算机制；目前多项代表性研究使用语言模型，但研究目标不局限于语言模型。",
+      "question": "怎样证明候选神经电路真实而稳定地实现某种计算，而不是只与输出相关？",
+      "math": "机制假设 → 特征／电路发现 → 干预测试 → 跨情境复核",
+      "status": "特征字典、替代模型与电路追踪工具快速发展；忠实性、完整性与跨样本泛化依然缺乏统一验证。",
+      "methods": [
+        [
+          "Sparse Feature Dictionaries",
+          "用稀疏分解提出候选中间特征。"
+        ],
+        [
+          "Attribution Graphs",
+          "追踪候选计算路径；替代模型路径不必忠实于原模型。"
+        ],
+        [
+          "Activation Patching",
+          "干预内部状态，检查候选机制能否预测行为变化。"
+        ],
+        [
+          "Cross-context Validation",
+          "在不同输入与模型配置上检验解释稳定性。"
+        ]
+      ],
+      "timeline": [
+        [
+          "2025 · Circuit Tracing",
+          "提出电路追踪及替代模型方法，并讨论其忠实性和重建问题。",
+          [
+            "circuit"
+          ]
+        ],
+        [
+          "2025 · Biology of a LLM",
+          "使用归因图分析若干具体模型行为，展示潜力和解释范围。",
+          [
+            "biology"
+          ]
+        ]
+      ],
+      "bottlenecks": [
+        [
+          "机制忠实性",
+          "替代模型的计算图不一定是原模型实际使用的机制。",
+          "文献明确指出",
+          [
+            "circuit"
+          ]
+        ],
+        [
+          "被遗漏的计算路径",
+          "部分固定注意力模式的分析不能解释注意力形成机制。",
+          "文献明确指出",
+          [
+            "circuit"
+          ]
+        ],
+        [
+          "重建误差与解释缺口",
+          "候选特征与图无法穷尽模型的内部计算。",
+          "文献明确指出",
+          [
+            "circuit"
+          ]
+        ],
+        [
+          "干预效果与完整功能定位",
+          "内部干预有作用不等于已经排除了替代路径或完整识别机制。",
+          "归纳",
+          [
+            "circuit",
+            "biology"
+          ]
+        ]
+      ],
+      "links": [
+        [
+          "A6",
+          "因果学习：干预与机制识别"
+        ],
+        [
+          "E2",
+          "AI 评价：忠实性和可重复性"
+        ],
+        [
+          "B1",
+          "深度学习架构：待解释的内部计算结构"
+        ]
+      ],
+      "opportunities": [
+        [
+          "发现—验证分离的机制检验",
+          "使用独立任务与预留干预实验，区分探索性电路发现和确认性机制验证。",
+          "需明确独立抽样、干预合法性及选择偏差假设。"
+        ],
+        [
+          "解释忠实性基准",
+          "报告跨输入稳定性、重建质量和行为干预预测能力三组指标。",
+          "单一指标不能证明完整机制识别。"
+        ]
+      ]
+    },
+    {
+      "id": "A5",
+      "slug": "amortized-inference",
+      "zh": "摊销推断与模拟推断",
+      "en": "Amortized & Simulation-based Inference",
+      "scope": "使用模拟器或神经密度估计，在似然难算或后验昂贵时进行重复推断；属于概率机器学习的具体方法族。",
+      "question": "如何在有限模拟预算下，获得快速、可诊断、对模型错设有敏感性的后验近似？",
+      "math": "(θ, x) ∼ p(θ)p(x | θ),   qφ(θ | x) ≈ p(θ | x)",
+      "status": "ABC、NPE、NLE、NRE 等形成方法体系；高成本模拟、尾部偏差、后验校准和真实模型错设仍活跃。",
+      "methods": [
+        [
+          "Approximate Bayesian Computation",
+          "用模拟数据与距离或摘要统计近似推断。"
+        ],
+        [
+          "Neural Posterior Estimation",
+          "训练可重用的条件后验近似器。"
+        ],
+        [
+          "Neural Likelihood Estimation",
+          "先学习 likelihood 再进行推断。"
+        ],
+        [
+          "Neural Ratio Estimation",
+          "学习密度比，用于推断与假设检验。"
+        ],
+        [
+          "Simulation-based Calibration",
+          "用模拟重复检验推断程序的部分校准性质。"
+        ]
+      ],
+      "timeline": [
+        [
+          "2021 · SBIBM",
+          "建立用于比较模拟推断算法的基准和指标体系。",
+          [
+            "sbibm"
+          ]
+        ],
+        [
+          "2025 · Neural Methods Review",
+          "系统总结神经摊销推断的统计方法与应用。",
+          [
+            "amort"
+          ]
+        ],
+        [
+          "持续更新 · SBC Diagnostics",
+          "sbi 文档介绍基于模拟的校准检查及其局限。",
+          [
+            "sbc"
+          ]
+        ]
+      ],
+      "bottlenecks": [
+        [
+          "昂贵模拟预算",
+          "高保真模拟器调用成本可能是训练和诊断的主要约束。",
+          "文献明确指出",
+          [
+            "sbibm",
+            "amort"
+          ]
+        ],
+        [
+          "后验尾部与局部误差",
+          "全局摊销训练可能在少见观测或复杂后验区域失准。",
+          "归纳",
+          [
+            "amort"
+          ]
+        ],
+        [
+          "校准不能由单一诊断保证",
+          "SBC 是重要检查工具，但通过单一校准检测不是后验正确的充分条件。",
+          "文献明确指出",
+          [
+            "sbc"
+          ]
+        ],
+        [
+          "模拟器模型错设",
+          "真实系统若不符合模拟器，拟合模拟器的后验未必具有现实有效性。",
+          "研究假设",
+          [
+            "amort"
+          ]
+        ]
+      ],
+      "links": [
+        [
+          "A5",
+          "概率机器学习：所在一级研究领域"
+        ],
+        [
+          "G1",
+          "科学机器学习：复杂模拟器和逆问题"
+        ],
+        [
+          "B2",
+          "生成模型：条件密度估计与流模型"
+        ],
+        [
+          "E1",
+          "可信 AI：校准与不确定性"
+        ]
+      ],
+      "opportunities": [
+        [
+          "诊断驱动的主动模拟",
+          "让后验诊断反过来引导模拟预算分配，检验覆盖率与尾部精度的变化。",
+          "调参与最终验证须避免使用同一测试集。"
+        ],
+        [
+          "模拟器错设下的稳健诊断",
+          "研究哪些统计量能够区分推断器误差与模型本身错误。",
+          "无额外假设时无法仅凭模拟数据证明对现实的有效性。"
+        ]
+      ]
+    }
+  ]
+}

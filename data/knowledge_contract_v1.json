@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "purpose": "Shared identity and typing contract for graph, research dossiers, source annotations and subsequent discussion threads.",
+  "authoritative_existing_files": [
+    "ai_research_atlas_data_2026.json",
+    "atlas_en_2026.json",
+    "research_profiles_2026.json",
+    "research_profiles_en_2026.json"
+  ],
+  "entity_types": {
+    "domain": {"id_example": "A5", "source": "domains", "url": "research/A5/"},
+    "topic": {"id_rule": "T:{domain-id}:{immutable-topic-slug}", "source": "domains[].topics", "state": "planned for expandable topic subgraphs"},
+    "bottleneck": {"id_example": "P1", "source": "problems"},
+    "pilot_dossier": {"id_rule": "D:{domain-id}:{pilot-slug}", "source": "research_profiles_2026.json", "state": "implemented as field sub-sections"},
+    "publication": {"id_rule": "S:{DOI if known, else immutable opaque ID}", "source": "research_profiles_2026.json#sources", "state": "cited in existing pilot sections"}
+  },
+  "relation_types": {
+    "theory": "Theoretical relationship; editor-assigned and non-causal by default",
+    "method": "Shared statistical or computational methodology",
+    "enables": "One field provides methods or capability relevant to another; review direction before encoding as a directed dependency",
+    "dependency": "Stated methodological dependency; not equivalent to a causal identification claim",
+    "intersection": "Interdisciplinary intersection",
+    "challenged_by": "Research direction is affected by a bottleneck"
+  },
+  "identity_invariants": [
+    "Domain IDs A1..G2 are persistent and may not be renamed when display names change",
+    "Bottleneck IDs P1..P12 are persistent",
+    "An editorial graph edge is not a causal arrow",
+    "Every reviewed relation should reference one or more durable source IDs and review metadata",
+    "A field profile does not imply that a specialized pilot dossier is comprehensive"
+  ],
+  "future_migration": "Preserve existing data; move content into typed entity records only after schema and route validation."
+}

@@ -1,0 +1,1686 @@
+{
+  "version": "1.0",
+  "updated": "2026-11-15",
+  "methodology": "概念分类依据主流会议征稿主题；研究状态与开放问题为编辑性综合判断，不是会议官方评级或定量测量。",
+  "layers": [
+    {
+      "id": "A",
+      "zh": "理论与学习基础",
+      "en": "Learning & Foundations",
+      "color": "#7c92ff",
+      "summary": "从有限数据中学习的数学基础、优化与因果识别"
+    },
+    {
+      "id": "B",
+      "zh": "模型与表示",
+      "en": "Models & Representations",
+      "color": "#ae82f7",
+      "summary": "表示数据、分布与知识的模型结构"
+    },
+    {
+      "id": "C",
+      "zh": "感知、语言与数据",
+      "en": "Perception, Language & Data",
+      "color": "#37c5c0",
+      "summary": "理解视觉、声音、语言及结构化观测"
+    },
+    {
+      "id": "D",
+      "zh": "推理、决策与行动",
+      "en": "Reasoning, Decision & Action",
+      "color": "#f2b86b",
+      "summary": "在环境中推理、规划、决策和执行"
+    },
+    {
+      "id": "E",
+      "zh": "可靠性与人机关系",
+      "en": "Reliability & Humans",
+      "color": "#ff8da9",
+      "summary": "验证、解释、保障 AI 系统行为"
+    },
+    {
+      "id": "F",
+      "zh": "系统与基础设施",
+      "en": "Systems & Infrastructure",
+      "color": "#80ca92",
+      "summary": "高效、隐私保护和大规模运行"
+    },
+    {
+      "id": "G",
+      "zh": "科学与认知智能",
+      "en": "Science & Cognition",
+      "color": "#6ebff1",
+      "summary": "科学研究、物理建模与脑认知启发"
+    }
+  ],
+  "domains": [
+    {
+      "id": "A1",
+      "layer": "A",
+      "en": "Statistical Learning Theory",
+      "zh": "统计学习理论",
+      "stage": "mature",
+      "progress": "PAC、泛化界和样本复杂度形成系统理论；现代深度网络的解释仍持续研究。",
+      "questions": [
+        "过参数化网络的紧致泛化界如何获得？",
+        "分布外与交互式数据的理论保证如何建立？",
+        "如何评价表示的统计复杂性？"
+      ],
+      "topics": [
+        "PAC / PAC-Bayes",
+        "VC Theory",
+        "Rademacher Complexity",
+        "Algorithmic Stability",
+        "Generalization Bounds",
+        "Double Descent",
+        "Benign Overfitting",
+        "Information-Theoretic Learning",
+        "Non-asymptotic Analysis",
+        "Online Learning Theory"
+      ],
+      "methods": [
+        "Generalization",
+        "Concentration Inequalities",
+        "Empirical Processes"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "A2",
+      "layer": "A",
+      "en": "Optimization for Machine Learning",
+      "zh": "机器学习优化",
+      "stage": "mature",
+      "progress": "SGD、Adam 等优化工具广泛使用；大规模非凸训练的动力学和效率依然活跃。",
+      "questions": [
+        "大模型非凸训练的可解释优化理论是什么？",
+        "如何兼顾训练稳定性、算力和最优性？",
+        "随机优化在异质数据下如何收敛？"
+      ],
+      "topics": [
+        "Convex Optimization",
+        "Nonconvex Optimization",
+        "SGD / Adam",
+        "Stochastic Approximation",
+        "Second-order Optimization",
+        "Bilevel Optimization",
+        "Distributed Optimization",
+        "Constrained Optimization",
+        "Online Optimization",
+        "Optimization Landscapes"
+      ],
+      "methods": [
+        "Gradient Methods",
+        "Numerical Linear Algebra",
+        "Stochastic Processes"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "A3",
+      "layer": "A",
+      "en": "Learning Paradigms",
+      "zh": "机器学习范式",
+      "stage": "mature",
+      "progress": "监督与无监督学习有成熟工具；自监督、主动学习和弱监督仍持续扩展。",
+      "questions": [
+        "如何减少对人工标签的依赖？",
+        "弱监督标签的噪声与偏差如何处理？",
+        "如何实现高效主动选择数据？"
+      ],
+      "topics": [
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Self-supervised Learning",
+        "Semi-supervised Learning",
+        "Active Learning",
+        "Weak Supervision",
+        "Few-shot Learning",
+        "Positive-unlabeled Learning",
+        "Online Learning",
+        "Multi-task Learning"
+      ],
+      "methods": [
+        "Empirical Risk Minimization",
+        "Contrastive Learning",
+        "Pseudo-labeling"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "A4",
+      "layer": "A",
+      "en": "Representation, Transfer & Continual Learning",
+      "zh": "表示、迁移与持续学习",
+      "stage": "active",
+      "progress": "大规模预训练显著提高迁移能力，但持续适应、结构稳定性和表示可识别性仍是挑战。",
+      "questions": [
+        "不同任务可共享哪些不变因素？",
+        "如何克服持续学习的灾难性遗忘？",
+        "如何证明表示可迁移？"
+      ],
+      "topics": [
+        "Representation Learning",
+        "Contrastive Learning",
+        "Transfer Learning",
+        "Domain Adaptation",
+        "Domain Generalization",
+        "Meta-learning",
+        "Continual Learning",
+        "Lifelong Learning",
+        "Disentanglement",
+        "Invariant Learning",
+        "Few-shot Adaptation"
+      ],
+      "methods": [
+        "Contrastive Objectives",
+        "Adapters",
+        "Regularization"
+      ],
+      "sources": [
+        "ai"
+      ]
+    },
+    {
+      "id": "A5",
+      "layer": "A",
+      "en": "Probabilistic & Bayesian ML",
+      "zh": "概率与贝叶斯机器学习",
+      "stage": "mixed",
+      "progress": "概率模型与 MCMC 理论基础成熟；复杂潜变量、非高斯和神经模型的可扩展推断持续发展。",
+      "questions": [
+        "高维后验近似怎样兼顾速度与准确性？",
+        "模型错设时不确定性是否可信？",
+        "隐式生成过程如何推断？"
+      ],
+      "topics": [
+        "Gaussian Processes",
+        "Latent Variable Models",
+        "Bayesian Neural Networks",
+        "Probabilistic Graphical Models",
+        "GMRF / SPDE",
+        "MCMC",
+        "Sequential Monte Carlo",
+        "Variational Inference",
+        "Laplace / INLA",
+        "Amortized Inference",
+        "Simulation-based Inference",
+        "Probabilistic Circuits"
+      ],
+      "methods": [
+        "Posterior Inference",
+        "Sparse Precision",
+        "MCMC / VI / INLA"
+      ],
+      "sources": [
+        "uai"
+      ]
+    },
+    {
+      "id": "A6",
+      "layer": "A",
+      "en": "Causal Learning & Inference",
+      "zh": "因果学习与推断",
+      "stage": "active",
+      "progress": "潜在结果和图模型的识别理论成熟；高维混杂、干扰、时空因果和因果表示仍活跃。",
+      "questions": [
+        "观测数据缺乏可识别性时能得出什么结论？",
+        "干扰和分布漂移如何影响因果效应？",
+        "神经表示具有怎样的因果语义？"
+      ],
+      "topics": [
+        "Causal Discovery",
+        "Potential Outcomes",
+        "Structural Causal Models",
+        "Causal DAGs",
+        "Counterfactual Learning",
+        "DML / Debiasing",
+        "TMLE / Doubly Robust",
+        "Causal Representation",
+        "Interference & Spillovers",
+        "Causal Transportability",
+        "Off-policy Evaluation"
+      ],
+      "methods": [
+        "Identification",
+        "Orthogonal Scores",
+        "Interventions"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "B1",
+      "layer": "B",
+      "en": "Deep Neural Architectures",
+      "zh": "深度网络架构",
+      "stage": "active",
+      "progress": "Transformer、CNN、状态空间网络等广泛发展；效率、长上下文和归纳偏置仍是关键问题。",
+      "questions": [
+        "什么架构能更有效地建模长期依赖？",
+        "如何兼顾表达能力与可解释性？",
+        "如何减少训练和推理成本？"
+      ],
+      "topics": [
+        "CNN",
+        "Transformers / Attention",
+        "State Space Models",
+        "RNN / LSTM",
+        "Mixture of Experts",
+        "MLPs",
+        "Neural ODEs",
+        "Equivariant Networks",
+        "Neural Operators",
+        "Sparsity & Modular Networks",
+        "Architecture Search"
+      ],
+      "methods": [
+        "Attention",
+        "Convolutions",
+        "Equivariance"
+      ],
+      "sources": [
+        "ai"
+      ]
+    },
+    {
+      "id": "B2",
+      "layer": "B",
+      "en": "Generative Modeling",
+      "zh": "生成模型",
+      "stage": "active",
+      "progress": "扩散、流匹配和自回归生成取得重要进展；控制、概率评估和长期一致性仍未解决。",
+      "questions": [
+        "生成样本逼真是否意味着正确世界动力学？",
+        "如何量化生成的不确定性？",
+        "如何进行精确条件控制？"
+      ],
+      "topics": [
+        "Autoregressive Generation",
+        "Variational Autoencoders",
+        "GANs",
+        "Diffusion Models",
+        "Score-based Generative Models",
+        "Flow Matching",
+        "Normalizing Flows",
+        "Energy-based Models",
+        "Discrete Generation",
+        "Controllable Generation",
+        "3D / Video Generation",
+        "Generative Evaluation"
+      ],
+      "methods": [
+        "Denoising",
+        "Score Matching",
+        "Likelihood / ELBO"
+      ],
+      "sources": [
+        "ai"
+      ]
+    },
+    {
+      "id": "B3",
+      "layer": "B",
+      "en": "Graph & Structured Learning",
+      "zh": "图与结构化学习",
+      "stage": "active",
+      "progress": "图神经网络和结构学习工具日益丰富；长程依赖、可迁移性及图结构不确定性仍存在。",
+      "questions": [
+        "消息传递如何跨越长程依赖？",
+        "图结构未知时如何有效学习？",
+        "怎样将概率图推断与 GNN 连接？"
+      ],
+      "topics": [
+        "Graph Neural Networks",
+        "Graph Transformers",
+        "Graph Representation",
+        "Graph Structure Learning",
+        "Dynamic Graphs",
+        "Knowledge Graph Embeddings",
+        "Hypergraphs",
+        "Graph Foundation Models",
+        "Bayesian Networks",
+        "Factor Graphs",
+        "Graphical Lasso",
+        "Message Passing / BP"
+      ],
+      "methods": [
+        "Graph Theory",
+        "Conditional Independence",
+        "Message Passing"
+      ],
+      "sources": [
+        "kdd"
+      ]
+    },
+    {
+      "id": "B4",
+      "layer": "B",
+      "en": "Foundation Models",
+      "zh": "基础模型",
+      "stage": "active",
+      "progress": "通用预训练及适配大幅扩展能力；跨任务可靠性、数据效率和模型评价更为关键。",
+      "questions": [
+        "预训练获得何种可迁移知识？",
+        "不同数据和模态的 scaling 规律是否一致？",
+        "如何衡量真正泛化？"
+      ],
+      "topics": [
+        "Pretraining",
+        "Scaling Laws",
+        "Instruction Tuning",
+        "Parameter-efficient Tuning",
+        "Post-training",
+        "Multimodal Foundation Models",
+        "Vision Foundation Models",
+        "Audio Foundation Models",
+        "Scientific Foundation Models",
+        "Test-time Compute",
+        "Model Adaptation",
+        "Data Mixtures"
+      ],
+      "methods": [
+        "Transfer Learning",
+        "Self-supervised Training",
+        "Fine-tuning"
+      ],
+      "sources": [
+        "ai"
+      ]
+    },
+    {
+      "id": "B5",
+      "layer": "B",
+      "en": "Symbolic & Neuro-symbolic AI",
+      "zh": "符号与神经符号 AI",
+      "stage": "mixed",
+      "progress": "符号逻辑、自动推理基础成熟；神经系统与可验证符号推理的融合仍在探索。",
+      "questions": [
+        "如何将神经表示与离散规则连接？",
+        "如何在不确定知识下保证推理可靠性？",
+        "符号知识如何自动学习和更新？"
+      ],
+      "topics": [
+        "Knowledge Representation",
+        "Logic Programming",
+        "Automated Theorem Proving",
+        "Neuro-symbolic Reasoning",
+        "Program Synthesis",
+        "Constraint Satisfaction",
+        "Ontology Learning",
+        "Proof Verification",
+        "Probabilistic Logic",
+        "Commonsense Reasoning"
+      ],
+      "methods": [
+        "Logic",
+        "Search",
+        "Program Induction"
+      ],
+      "sources": [
+        "aaai"
+      ]
+    },
+    {
+      "id": "C1",
+      "layer": "C",
+      "en": "Computer Vision",
+      "zh": "计算机视觉",
+      "stage": "mature",
+      "progress": "二维识别/检测方法体系成熟；3D、动态场景和物理空间理解仍活跃。",
+      "questions": [
+        "如何从有限视角推断真实三维结构？",
+        "视觉模型如何处理遮挡与环境变化？",
+        "视频如何保持时空一致性？"
+      ],
+      "topics": [
+        "Image Classification",
+        "Object Detection",
+        "Semantic Segmentation",
+        "Instance Segmentation",
+        "Vision Transformers",
+        "3D Reconstruction",
+        "NeRF / Gaussian Splatting",
+        "Optical Flow",
+        "Video Understanding",
+        "Pose Estimation",
+        "Scene Understanding",
+        "Event Cameras"
+      ],
+      "methods": [
+        "Convolutions",
+        "Geometric Vision",
+        "Multi-view Geometry"
+      ],
+      "sources": [
+        "cv"
+      ]
+    },
+    {
+      "id": "C2",
+      "layer": "C",
+      "en": "Natural Language Processing",
+      "zh": "自然语言处理",
+      "stage": "mature",
+      "progress": "语言预训练带来显著进步；语义可靠性、长文档理解和多语言问题仍重要。",
+      "questions": [
+        "如何评价语言理解而非记忆？",
+        "长上下文模型能否稳定进行推理？",
+        "低资源语言如何获得公平能力？"
+      ],
+      "topics": [
+        "Language Modeling",
+        "Machine Translation",
+        "Information Extraction",
+        "Question Answering",
+        "Text Classification",
+        "Summarization",
+        "Dialogue Systems",
+        "Semantic Parsing",
+        "Multilingual NLP",
+        "Long-context NLP",
+        "Retrieval-augmented Generation"
+      ],
+      "methods": [
+        "Sequence Modeling",
+        "Tokenization",
+        "Information Retrieval"
+      ],
+      "sources": [
+        "acl"
+      ]
+    },
+    {
+      "id": "C3",
+      "layer": "C",
+      "en": "Speech & Audio Intelligence",
+      "zh": "语音与音频智能",
+      "stage": "mature",
+      "progress": "语音识别和合成广泛部署；复杂声景理解、跨语言和鲁棒性仍有开放问题。",
+      "questions": [
+        "嘈杂环境中的语音分离与识别如何改进？",
+        "声音事件的因果结构如何学习？",
+        "如何融合音频与其他模态？"
+      ],
+      "topics": [
+        "Automatic Speech Recognition",
+        "Text-to-Speech",
+        "Speech Translation",
+        "Speaker Diarization",
+        "Audio Event Detection",
+        "Music Information Retrieval",
+        "Speech Enhancement",
+        "Source Separation",
+        "Audio Generation",
+        "Spatial Audio",
+        "Audio-language Models"
+      ],
+      "methods": [
+        "Signal Processing",
+        "Acoustic Modeling",
+        "Self-supervision"
+      ],
+      "sources": [
+        "aaai"
+      ]
+    },
+    {
+      "id": "C4",
+      "layer": "C",
+      "en": "Multimodal Learning",
+      "zh": "多模态学习",
+      "stage": "active",
+      "progress": "视觉语言与音视频模型快速扩张；跨模态 grounding 和组合推理依然困难。",
+      "questions": [
+        "不同模态如何共同编码物理实体？",
+        "跨模态对齐是否支持因果推断？",
+        "缺失模态时如何可靠推理？"
+      ],
+      "topics": [
+        "Vision-Language Models",
+        "Audio-Visual Learning",
+        "Cross-modal Alignment",
+        "Multimodal Fusion",
+        "Visual Question Answering",
+        "Video-language Learning",
+        "Vision-Language-Action",
+        "Multimodal Retrieval",
+        "Spatial Reasoning",
+        "Grounding",
+        "Missing-modality Learning"
+      ],
+      "methods": [
+        "Contrastive Alignment",
+        "Fusion",
+        "Cross Attention"
+      ],
+      "sources": [
+        "ai"
+      ]
+    },
+    {
+      "id": "C5",
+      "layer": "C",
+      "en": "Knowledge Discovery, IR & Recsys",
+      "zh": "知识发现、检索与推荐",
+      "stage": "mature",
+      "progress": "检索与推荐在工业中高度成熟；反馈循环、选择偏差和长期效果评价仍困难。",
+      "questions": [
+        "推荐曝光如何改变数据分布？",
+        "如何避免反馈循环造成的偏差？",
+        "知识库如何持续更新并被验证？"
+      ],
+      "topics": [
+        "Information Retrieval",
+        "Search Ranking",
+        "Recommender Systems",
+        "Knowledge Graphs",
+        "Data Mining",
+        "Information Extraction",
+        "User Modeling",
+        "Counterfactual Recommendation",
+        "Search & Retrieval Evaluation",
+        "Knowledge Base Construction",
+        "Learning to Rank"
+      ],
+      "methods": [
+        "Ranking",
+        "Causal Evaluation",
+        "Graph Learning"
+      ],
+      "sources": [
+        "kdd"
+      ]
+    },
+    {
+      "id": "C6",
+      "layer": "C",
+      "en": "Time Series & Structured Data",
+      "zh": "时间序列与结构化数据",
+      "stage": "mature",
+      "progress": "经典统计模型成熟；时序基础模型、非平稳泛化和高维时空学习持续发展。",
+      "questions": [
+        "非平稳数据上如何保证预测可靠？",
+        "不规则采样和缺失数据如何建模？",
+        "长时间预测的不确定性如何表示？"
+      ],
+      "topics": [
+        "Time-series Forecasting",
+        "Anomaly Detection",
+        "State-space Models",
+        "Spatio-temporal Learning",
+        "Tabular Deep Learning",
+        "Irregular Time Series",
+        "Change-point Detection",
+        "Graph Time Series",
+        "Survival / Event Modeling",
+        "Forecasting Foundation Models",
+        "Probabilistic Forecasting"
+      ],
+      "methods": [
+        "ARIMA / GP",
+        "State-space",
+        "Temporal Attention"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "D1",
+      "layer": "D",
+      "en": "Reasoning, Search & Planning",
+      "zh": "推理、搜索与规划",
+      "stage": "mature",
+      "progress": "经典搜索、逻辑和规划理论成熟；动态环境下可验证的多步推理仍难。",
+      "questions": [
+        "如何组合搜索与神经推理？",
+        "不确定和部分观测下如何规划？",
+        "长链推理过程如何验证？"
+      ],
+      "topics": [
+        "Heuristic Search",
+        "Automated Planning",
+        "Constraint Solving",
+        "SAT / SMT",
+        "Theorem Proving",
+        "Task and Motion Planning",
+        "Planning under Uncertainty",
+        "Hierarchical Planning",
+        "Monte Carlo Tree Search",
+        "Reasoning Verification"
+      ],
+      "methods": [
+        "Search",
+        "Logic",
+        "Graph Algorithms"
+      ],
+      "sources": [
+        "aaai"
+      ]
+    },
+    {
+      "id": "D2",
+      "layer": "D",
+      "en": "Reinforcement Learning & Control",
+      "zh": "强化学习与控制",
+      "stage": "mature",
+      "progress": "经典 MDP 和控制理论成熟，深度 RL 应用广泛；样本效率、安全和长期泛化仍是焦点。",
+      "questions": [
+        "如何减少真实环境交互成本？",
+        "离线数据如何支持安全策略改进？",
+        "策略迁移到新环境时如何验证？"
+      ],
+      "topics": [
+        "Model-free RL",
+        "Model-based RL",
+        "Offline RL",
+        "Online RL",
+        "Hierarchical RL",
+        "Inverse RL",
+        "Bandits",
+        "Safe RL",
+        "Imitation Learning",
+        "Optimal Control",
+        "Robust RL",
+        "Policy Evaluation"
+      ],
+      "methods": [
+        "MDP / POMDP",
+        "Bellman Equations",
+        "Policy Optimization"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "D3",
+      "layer": "D",
+      "en": "AI Agents & Multi-agent Systems",
+      "zh": "智能体与多智能体",
+      "stage": "active",
+      "progress": "工具使用与计算机操作能力提升迅速；长期可靠性、记忆和多智能体协调仍薄弱。",
+      "questions": [
+        "长任务中的错误如何被发现和修复？",
+        "多智能体如何协调而不产生不稳定？",
+        "如何评价任务能力与风险？"
+      ],
+      "topics": [
+        "Tool-using Agents",
+        "Autonomous Agents",
+        "Agent Memory",
+        "Long-horizon Task Planning",
+        "Multi-agent Communication",
+        "Multi-agent RL",
+        "Cooperative AI",
+        "Game Theory",
+        "Agent Evaluation",
+        "Human-agent Interaction",
+        "Agent Safety"
+      ],
+      "methods": [
+        "Planning",
+        "Memory Systems",
+        "Game Theory"
+      ],
+      "sources": [
+        "index"
+      ]
+    },
+    {
+      "id": "D4",
+      "layer": "D",
+      "en": "Robotics & Embodied AI",
+      "zh": "机器人与具身智能",
+      "stage": "active",
+      "progress": "受控环境表现增强，复杂家庭场景与现实部署仍有显著差距。",
+      "questions": [
+        "仿真中学到的策略如何安全迁移？",
+        "接触和操作如何可靠执行？",
+        "长期任务中误差如何避免积累？"
+      ],
+      "topics": [
+        "Robot Perception",
+        "Visual SLAM",
+        "State Estimation",
+        "Sensor Fusion",
+        "Robot Manipulation",
+        "Locomotion",
+        "Motion Planning",
+        "Robot Learning",
+        "Sim-to-Real",
+        "Embodied Foundation Models",
+        "Vision-Language-Action",
+        "Safe Control"
+      ],
+      "methods": [
+        "Filtering",
+        "Motion Planning",
+        "Control Theory"
+      ],
+      "sources": [
+        "index"
+      ]
+    },
+    {
+      "id": "D5",
+      "layer": "D",
+      "en": "World Models & Simulation",
+      "zh": "世界模型与模拟",
+      "stage": "frontier",
+      "progress": "环境动态与行动条件生成研究活跃；长期预测、一致性和规划价值尚未形成统一评价。",
+      "questions": [
+        "逼真生成是否反映真实动力学？",
+        "长期反事实预测如何验证？",
+        "何种世界模型对规划最有用？"
+      ],
+      "topics": [
+        "Latent Dynamics",
+        "Action-conditioned Prediction",
+        "Video World Models",
+        "Model-based Simulation",
+        "Interactive Environments",
+        "POMDP Belief Models",
+        "Physics-based Simulation",
+        "Counterfactual Dynamics",
+        "Long-horizon Prediction",
+        "Digital Environments",
+        "World Model Evaluation"
+      ],
+      "methods": [
+        "State-space Modeling",
+        "Neural Dynamics",
+        "Model Predictive Control"
+      ],
+      "sources": [
+        "index"
+      ]
+    },
+    {
+      "id": "E1",
+      "layer": "E",
+      "en": "Trustworthy, Interpretable & Reliable AI",
+      "zh": "可信、可解释与可靠 AI",
+      "stage": "mixed",
+      "progress": "鲁棒性、校准和解释方法众多；机制有效性、OOD 可靠性和安全约束仍有困难。",
+      "questions": [
+        "不确定性如何在分布漂移下保持有效？",
+        "解释是相关性还是因果机制？",
+        "如何系统验证模型安全？"
+      ],
+      "topics": [
+        "Uncertainty Quantification",
+        "Calibration",
+        "Conformal Prediction",
+        "Mechanistic Interpretability",
+        "Explainable AI",
+        "Adversarial Robustness",
+        "OOD Detection",
+        "Distribution Shift",
+        "Model Verification",
+        "AI Safety",
+        "Fairness",
+        "Selective Prediction"
+      ],
+      "methods": [
+        "Hypothesis Testing",
+        "Reliability Analysis",
+        "Intervention"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "E2",
+      "layer": "E",
+      "en": "Evaluation, Benchmarks & Data-centric AI",
+      "zh": "评价、基准与数据中心 AI",
+      "stage": "active",
+      "progress": "模型能力迭代快于部分评价基准；数据污染、实验设计和评价有效性日益重要。",
+      "questions": [
+        "基准饱和时如何测量真实能力？",
+        "评价指标是否与现实目标一致？",
+        "如何防止数据污染和虚假进步？"
+      ],
+      "topics": [
+        "Benchmark Design",
+        "Evaluation Protocols",
+        "Dataset Auditing",
+        "Data Quality",
+        "Data Contamination",
+        "Replicability",
+        "Statistical Testing",
+        "Human Evaluation",
+        "Agent Evaluation",
+        "Model Auditing",
+        "Data Curation"
+      ],
+      "methods": [
+        "Experimental Design",
+        "Measurement Theory",
+        "Robust Statistics"
+      ],
+      "sources": [
+        "eval"
+      ]
+    },
+    {
+      "id": "E3",
+      "layer": "E",
+      "en": "Human-centered & Socio-technical AI",
+      "zh": "以人为中心与社会技术 AI",
+      "stage": "active",
+      "progress": "人机交互与治理研究不断深化；公平、透明和责任链条高度依赖情境。",
+      "questions": [
+        "如何评估人机协作的长期效果？",
+        "不同群体之间的利益如何平衡？",
+        "模型决策如何接受社会监督？"
+      ],
+      "topics": [
+        "Human-AI Interaction",
+        "AI Alignment",
+        "AI Governance",
+        "AI Ethics",
+        "Algorithmic Fairness",
+        "Privacy & Consent",
+        "Accessibility",
+        "Participatory Design",
+        "Human Feedback",
+        "Societal Impact",
+        "AI Policy"
+      ],
+      "methods": [
+        "Human Factors",
+        "Fairness Metrics",
+        "Policy Analysis"
+      ],
+      "sources": [
+        "aaai"
+      ]
+    },
+    {
+      "id": "F1",
+      "layer": "F",
+      "en": "Efficient AI & ML Systems",
+      "zh": "高效 AI 与机器学习系统",
+      "stage": "mature",
+      "progress": "GPU 训练、量化和推理优化高度活跃且有成熟实践；能耗与资源瓶颈持续变化。",
+      "questions": [
+        "怎样在保证质量下压缩模型？",
+        "长上下文与实时推理如何降低延迟？",
+        "资源受限设备怎样部署复杂模型？"
+      ],
+      "topics": [
+        "Distributed Training",
+        "Inference Serving",
+        "Model Quantization",
+        "Pruning",
+        "Distillation",
+        "Parameter-efficient Learning",
+        "Edge AI",
+        "Compiler Optimization",
+        "Hardware-aware Learning",
+        "Federated Infrastructure",
+        "Energy-efficient ML",
+        "Parallelization"
+      ],
+      "methods": [
+        "Parallel Computing",
+        "Kernel Engineering",
+        "Compression"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "F2",
+      "layer": "F",
+      "en": "Privacy-preserving & Distributed Learning",
+      "zh": "隐私保护与分布式学习",
+      "stage": "mixed",
+      "progress": "联邦学习与差分隐私已形成理论和实践；隐私—效用权衡及异质参与方依然困难。",
+      "questions": [
+        "隐私预算如何影响实际效用？",
+        "异质客户端的数据如何公平训练？",
+        "分布式环境如何抵抗攻击？"
+      ],
+      "topics": [
+        "Federated Learning",
+        "Differential Privacy",
+        "Secure Aggregation",
+        "Split Learning",
+        "Decentralized Learning",
+        "Private Inference",
+        "Communication-efficient Learning",
+        "Federated Optimization",
+        "Robust Aggregation",
+        "Privacy Auditing"
+      ],
+      "methods": [
+        "Privacy Guarantees",
+        "Distributed Optimization",
+        "Cryptography"
+      ],
+      "sources": [
+        "ml"
+      ]
+    },
+    {
+      "id": "G1",
+      "layer": "G",
+      "en": "Scientific ML & AI for Science",
+      "zh": "科学机器学习与 AI for Science",
+      "stage": "active",
+      "progress": "蛋白质、材料、气候和科学模拟应用显著发展；可验证性、外推与科学闭环仍是关键。",
+      "questions": [
+        "如何结合物理规律与数据学习？",
+        "模型提出的发现如何被实验验证？",
+        "稀缺科学数据上如何保持外推可靠？"
+      ],
+      "topics": [
+        "Physics-informed ML",
+        "Neural Operators",
+        "PDE Learning",
+        "Scientific Foundation Models",
+        "Molecular AI",
+        "Protein Modeling",
+        "Materials Discovery",
+        "Climate & Weather AI",
+        "AI for Mathematics",
+        "Digital Twins",
+        "Automated Experimentation",
+        "Inverse Problems"
+      ],
+      "methods": [
+        "Scientific Computing",
+        "Bayesian Inverse Problems",
+        "PDEs"
+      ],
+      "sources": [
+        "science"
+      ]
+    },
+    {
+      "id": "G2",
+      "layer": "G",
+      "en": "NeuroAI & Cognitive Systems",
+      "zh": "神经 AI 与认知系统",
+      "stage": "frontier",
+      "progress": "计算神经科学与模型认知研究持续交汇；从生物机制到可验证 AI 设计的映射仍具争议。",
+      "questions": [
+        "神经系统哪些机制值得算法借鉴？",
+        "神经行为与模型计算机制如何对应？",
+        "认知能力如何进行因果验证？"
+      ],
+      "topics": [
+        "Computational Neuroscience",
+        "Neural Coding",
+        "Brain-inspired Learning",
+        "Cognitive Architectures",
+        "Memory & Attention",
+        "Decision Neuroscience",
+        "Neural Dynamics",
+        "Neuromorphic Computing",
+        "Brain-Model Alignment",
+        "Computational Cognitive Science",
+        "Neural Mechanism Discovery"
+      ],
+      "methods": [
+        "Neural Dynamics",
+        "Dynamical Systems",
+        "Cognitive Modeling"
+      ],
+      "sources": [
+        "ai"
+      ]
+    }
+  ],
+  "problems": [
+    {
+      "id": "P1",
+      "zh": "分布外泛化",
+      "en": "Out-of-distribution generalization",
+      "description": "模型在新的任务、环境或数据分布下失效。",
+      "areas": [
+        "A1",
+        "A4",
+        "A6",
+        "B4",
+        "C1",
+        "C4",
+        "C6",
+        "D2",
+        "D4",
+        "E1"
+      ],
+      "question": "如何界定可迁移的环境不变性？"
+    },
+    {
+      "id": "P2",
+      "zh": "数据效率",
+      "en": "Data & sample efficiency",
+      "description": "标注、模拟、交互和实验数据昂贵。",
+      "areas": [
+        "A3",
+        "A4",
+        "A5",
+        "B4",
+        "C1",
+        "D2",
+        "D4",
+        "G1"
+      ],
+      "question": "怎样用更少但更有信息量的数据学习？"
+    },
+    {
+      "id": "P3",
+      "zh": "推断与计算效率",
+      "en": "Inference & compute efficiency",
+      "description": "高维优化、推断和部署的计算成本限制方法。",
+      "areas": [
+        "A2",
+        "A5",
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "D5",
+        "F1",
+        "F2"
+      ],
+      "question": "如何在预算约束下保证精度和速度？"
+    },
+    {
+      "id": "P4",
+      "zh": "不确定性与校准",
+      "en": "Uncertainty & calibration",
+      "description": "概率或置信度并不总与真实错误风险一致。",
+      "areas": [
+        "A5",
+        "A6",
+        "B2",
+        "C6",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "E1",
+        "G1"
+      ],
+      "question": "如何在结构变化时保持可靠的不确定性估计？"
+    },
+    {
+      "id": "P5",
+      "zh": "长期一致性",
+      "en": "Long-horizon consistency",
+      "description": "预测和行动过程中的误差不断传播。",
+      "areas": [
+        "B2",
+        "C2",
+        "C4",
+        "C6",
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "question": "如何监控和纠正长期轨迹偏差？"
+    },
+    {
+      "id": "P6",
+      "zh": "因果与干预理解",
+      "en": "Causal & intervention understanding",
+      "description": "统计相关不保证干预后的结果正确。",
+      "areas": [
+        "A6",
+        "A4",
+        "B3",
+        "C5",
+        "D2",
+        "D5",
+        "E1",
+        "G2"
+      ],
+      "question": "如何获得可检验的机制和反事实模型？"
+    },
+    {
+      "id": "P7",
+      "zh": "结构与表示",
+      "en": "Structure & representations",
+      "description": "学到的表示可能不具备稳定的语义或组合性。",
+      "areas": [
+        "A1",
+        "A4",
+        "A5",
+        "B1",
+        "B3",
+        "B4",
+        "B5",
+        "C1",
+        "C4",
+        "D5"
+      ],
+      "question": "什么结构能带来组合泛化？"
+    },
+    {
+      "id": "P8",
+      "zh": "持续适应",
+      "en": "Continual adaptation",
+      "description": "环境和任务变化后模型容易遗忘或性能下降。",
+      "areas": [
+        "A3",
+        "A4",
+        "C5",
+        "C6",
+        "D2",
+        "D3",
+        "D4",
+        "F2"
+      ],
+      "question": "何时更新模型，以及如何避免灾难性遗忘？"
+    },
+    {
+      "id": "P9",
+      "zh": "评价与可验证性",
+      "en": "Evaluation & verification",
+      "description": "基准与真实能力不一致，研究结果难复现。",
+      "areas": [
+        "A1",
+        "A5",
+        "B2",
+        "B4",
+        "C2",
+        "D1",
+        "D3",
+        "D4",
+        "D5",
+        "E1",
+        "E2",
+        "G1"
+      ],
+      "question": "怎样设计具有构念效度和可重复性的测试？"
+    },
+    {
+      "id": "P10",
+      "zh": "安全与协调",
+      "en": "Safety & coordination",
+      "description": "多主体、多目标和真实世界部署引入新风险。",
+      "areas": [
+        "A6",
+        "B5",
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "E1",
+        "E3",
+        "F2"
+      ],
+      "question": "怎样协调相冲突的目标并检验安全边界？"
+    },
+    {
+      "id": "P11",
+      "zh": "物理约束与真实世界映射",
+      "en": "Physical grounding",
+      "description": "视觉或生成的合理性不等于物理可执行性。",
+      "areas": [
+        "B2",
+        "C1",
+        "C4",
+        "D4",
+        "D5",
+        "G1",
+        "G2"
+      ],
+      "question": "怎样从观测中学习受物理约束的动态？"
+    },
+    {
+      "id": "P12",
+      "zh": "知识更新与推理可信度",
+      "en": "Knowledge & reasoning fidelity",
+      "description": "知识可能过时，推理链易出现隐蔽错误。",
+      "areas": [
+        "B4",
+        "B5",
+        "C2",
+        "C5",
+        "D1",
+        "D3",
+        "E1",
+        "E2"
+      ],
+      "question": "怎样检验外部知识与多步推理？"
+    }
+  ],
+  "links": [
+    {
+      "a": "A1",
+      "b": "A4",
+      "type": "theory",
+      "why": "泛化理论 ↔ 可迁移表示"
+    },
+    {
+      "a": "A1",
+      "b": "B4",
+      "type": "theory",
+      "why": "扩展规模与泛化"
+    },
+    {
+      "a": "A1",
+      "b": "E1",
+      "type": "theory",
+      "why": "可靠性界限"
+    },
+    {
+      "a": "A2",
+      "b": "B1",
+      "type": "method",
+      "why": "神经网络优化"
+    },
+    {
+      "a": "A2",
+      "b": "F1",
+      "type": "method",
+      "why": "高效训练系统"
+    },
+    {
+      "a": "A2",
+      "b": "D2",
+      "type": "method",
+      "why": "策略优化"
+    },
+    {
+      "a": "A3",
+      "b": "B4",
+      "type": "method",
+      "why": "自监督预训练"
+    },
+    {
+      "a": "A3",
+      "b": "D4",
+      "type": "method",
+      "why": "低标签机器人学习"
+    },
+    {
+      "a": "A4",
+      "b": "C4",
+      "type": "method",
+      "why": "跨模态表示"
+    },
+    {
+      "a": "A4",
+      "b": "D4",
+      "type": "method",
+      "why": "Sim-to-Real 迁移"
+    },
+    {
+      "a": "A4",
+      "b": "D5",
+      "type": "method",
+      "why": "状态表示学习"
+    },
+    {
+      "a": "A5",
+      "b": "B3",
+      "type": "method",
+      "why": "图结构化概率推断"
+    },
+    {
+      "a": "A5",
+      "b": "C6",
+      "type": "method",
+      "why": "状态空间与概率预测"
+    },
+    {
+      "a": "A5",
+      "b": "D4",
+      "type": "method",
+      "why": "贝叶斯状态估计"
+    },
+    {
+      "a": "A5",
+      "b": "D5",
+      "type": "method",
+      "why": "动态不确定性"
+    },
+    {
+      "a": "A5",
+      "b": "E1",
+      "type": "method",
+      "why": "后验与预测不确定性"
+    },
+    {
+      "a": "A5",
+      "b": "G1",
+      "type": "method",
+      "why": "贝叶斯逆问题"
+    },
+    {
+      "a": "A6",
+      "b": "E1",
+      "type": "method",
+      "why": "因果可解释性"
+    },
+    {
+      "a": "A6",
+      "b": "D2",
+      "type": "method",
+      "why": "反事实策略评价"
+    },
+    {
+      "a": "A6",
+      "b": "D5",
+      "type": "method",
+      "why": "干预型动态模型"
+    },
+    {
+      "a": "A6",
+      "b": "C5",
+      "type": "method",
+      "why": "推荐曝光偏差"
+    },
+    {
+      "a": "A6",
+      "b": "G2",
+      "type": "method",
+      "why": "机制识别"
+    },
+    {
+      "a": "B1",
+      "b": "B4",
+      "type": "enables",
+      "why": "架构支持基础模型"
+    },
+    {
+      "a": "B1",
+      "b": "F1",
+      "type": "dependency",
+      "why": "算力与架构协同"
+    },
+    {
+      "a": "B1",
+      "b": "C1",
+      "type": "enables",
+      "why": "视觉网络"
+    },
+    {
+      "a": "B2",
+      "b": "D5",
+      "type": "intersection",
+      "why": "生成与环境模拟"
+    },
+    {
+      "a": "B2",
+      "b": "C1",
+      "type": "intersection",
+      "why": "图像与视频生成"
+    },
+    {
+      "a": "B2",
+      "b": "G1",
+      "type": "intersection",
+      "why": "分子和科学生成"
+    },
+    {
+      "a": "B3",
+      "b": "C5",
+      "type": "method",
+      "why": "知识图谱和推荐"
+    },
+    {
+      "a": "B3",
+      "b": "G1",
+      "type": "method",
+      "why": "分子/科学图表示"
+    },
+    {
+      "a": "B3",
+      "b": "D4",
+      "type": "method",
+      "why": "图因子与 SLAM"
+    },
+    {
+      "a": "B3",
+      "b": "B5",
+      "type": "intersection",
+      "why": "结构化知识与逻辑"
+    },
+    {
+      "a": "B4",
+      "b": "C2",
+      "type": "enables",
+      "why": "语言基础模型"
+    },
+    {
+      "a": "B4",
+      "b": "C4",
+      "type": "enables",
+      "why": "多模态基础模型"
+    },
+    {
+      "a": "B4",
+      "b": "D3",
+      "type": "enables",
+      "why": "Agent 的基础能力"
+    },
+    {
+      "a": "B4",
+      "b": "D4",
+      "type": "intersection",
+      "why": "具身基础模型"
+    },
+    {
+      "a": "B5",
+      "b": "D1",
+      "type": "enables",
+      "why": "符号搜索和推理"
+    },
+    {
+      "a": "B5",
+      "b": "D3",
+      "type": "intersection",
+      "why": "神经符号 Agent"
+    },
+    {
+      "a": "C1",
+      "b": "C4",
+      "type": "enables",
+      "why": "视觉多模态"
+    },
+    {
+      "a": "C1",
+      "b": "D4",
+      "type": "enables",
+      "why": "机器人感知"
+    },
+    {
+      "a": "C1",
+      "b": "D5",
+      "type": "intersection",
+      "why": "视觉世界状态"
+    },
+    {
+      "a": "C2",
+      "b": "D3",
+      "type": "enables",
+      "why": "语言驱动 Agent"
+    },
+    {
+      "a": "C2",
+      "b": "C5",
+      "type": "intersection",
+      "why": "检索增强"
+    },
+    {
+      "a": "C2",
+      "b": "E2",
+      "type": "intersection",
+      "why": "语言能力评价"
+    },
+    {
+      "a": "C3",
+      "b": "C4",
+      "type": "enables",
+      "why": "音频多模态"
+    },
+    {
+      "a": "C4",
+      "b": "D4",
+      "type": "enables",
+      "why": "视觉语言行动"
+    },
+    {
+      "a": "C4",
+      "b": "D5",
+      "type": "intersection",
+      "why": "多模态动态世界"
+    },
+    {
+      "a": "C5",
+      "b": "E2",
+      "type": "method",
+      "why": "信息质量和检索评价"
+    },
+    {
+      "a": "C6",
+      "b": "D5",
+      "type": "method",
+      "why": "时间动态模型"
+    },
+    {
+      "a": "C6",
+      "b": "G1",
+      "type": "intersection",
+      "why": "科学时空预测"
+    },
+    {
+      "a": "D1",
+      "b": "D2",
+      "type": "method",
+      "why": "规划与行动优化"
+    },
+    {
+      "a": "D1",
+      "b": "D3",
+      "type": "enables",
+      "why": "Agent 任务规划"
+    },
+    {
+      "a": "D2",
+      "b": "D4",
+      "type": "method",
+      "why": "机器人强化学习"
+    },
+    {
+      "a": "D2",
+      "b": "D5",
+      "type": "method",
+      "why": "基于模型的 RL"
+    },
+    {
+      "a": "D3",
+      "b": "E2",
+      "type": "intersection",
+      "why": "Agent 长任务评价"
+    },
+    {
+      "a": "D3",
+      "b": "E1",
+      "type": "intersection",
+      "why": "可验证行动"
+    },
+    {
+      "a": "D3",
+      "b": "E3",
+      "type": "intersection",
+      "why": "人机协作"
+    },
+    {
+      "a": "D4",
+      "b": "E1",
+      "type": "intersection",
+      "why": "安全控制"
+    },
+    {
+      "a": "D4",
+      "b": "G1",
+      "type": "intersection",
+      "why": "物理建模"
+    },
+    {
+      "a": "D5",
+      "b": "G1",
+      "type": "intersection",
+      "why": "科学模拟与孪生"
+    },
+    {
+      "a": "E1",
+      "b": "E2",
+      "type": "method",
+      "why": "校准与能力验证"
+    },
+    {
+      "a": "E1",
+      "b": "F2",
+      "type": "intersection",
+      "why": "隐私与可靠性"
+    },
+    {
+      "a": "E2",
+      "b": "G1",
+      "type": "intersection",
+      "why": "科研可复现性"
+    },
+    {
+      "a": "F1",
+      "b": "B4",
+      "type": "enables",
+      "why": "大规模模型运行"
+    },
+    {
+      "a": "F2",
+      "b": "C5",
+      "type": "intersection",
+      "why": "分布式个性化"
+    },
+    {
+      "a": "G1",
+      "b": "G2",
+      "type": "intersection",
+      "why": "神经科学与科学建模"
+    }
+  ],
+  "sources": [
+    {
+      "title": "NeurIPS 2026 Call for Papers",
+      "url": "https://nips.cc/Conferences/2026/CallForPapers"
+    },
+    {
+      "title": "ICML 2026 Call for Papers",
+      "url": "https://icml.cc/Conferences/2026/CallForPapers"
+    },
+    {
+      "title": "AAAI-27 Areas and Topics",
+      "url": "https://aaai.org/conference/aaai/aaai-27/areas-and-topics/"
+    },
+    {
+      "title": "Stanford AI Index 2026 — Technical Performance",
+      "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+    },
+    {
+      "title": "NeurIPS 2026 Evaluations & Datasets",
+      "url": "https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets"
+    }
+  ]
+}

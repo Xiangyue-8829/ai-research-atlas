@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0",
+  "language": "en",
+  "profiles": {
+    "D5": {
+      "scope": "Models environment dynamics that support prediction, planning, and action; world models should not be equated with video generation alone.",
+      "question": "How can internal models reliably predict the consequences of actions in partially observed, changing environments?",
+      "status": "Model-based reinforcement learning and real-time interactive world generation have advanced considerably; long-horizon prediction, counterfactual actions, and real-world decision reliability remain unresolved.",
+      "methods": [
+        [
+          "Latent Dynamics Models",
+          "Compress high-dimensional observations into recursively updated latent states."
+        ],
+        [
+          "Model-based RL",
+          "Use learned dynamics to plan, imagine trajectories, or optimize policies."
+        ],
+        [
+          "Action-conditioned Simulation",
+          "Predict future observations or environmental states conditioned on actions."
+        ],
+        [
+          "Physics-aware Dynamics",
+          "Incorporate physical constraints or structured priors to improve extrapolation."
+        ]
+      ],
+      "timeline": [
+        [
+          "2025 · DreamerV3",
+          "A unified model-based RL configuration was evaluated across diverse control tasks."
+        ],
+        [
+          "2025 · Genie 3",
+          "An interactive real-time world generation system was demonstrated; the team also described limitations in interaction duration and control."
+        ]
+      ],
+      "bottlenecks": [
+        [
+          "Long-horizon error accumulation",
+          "Single-step prediction bias may compound across long rollouts; evaluation should consider both prediction horizon and planning utility.",
+          "Editorial synthesis"
+        ],
+        [
+          "Action and counterfactual generalization",
+          "Actions insufficiently covered by training policies may cause out-of-distribution dynamics errors.",
+          "Research hypothesis"
+        ],
+        [
+          "Visual realism versus control utility",
+          "Visual quality alone does not establish that learned transitions are valid for closed-loop control.",
+          "Editorial synthesis"
+        ],
+        [
+          "Uncertainty-aware planning",
+          "How different uncertainty sources should influence rollout length and behavioral risk remains an active research question.",
+          "Research hypothesis"
+        ]
+      ],
+      "links": [
+        "Reinforcement learning: model-based policy optimization",
+        "Robotics: state estimation, planning, and control",
+        "Generative modeling: video simulation and action-conditioned generation",
+        "Bayesian ML: dynamic inference and uncertainty"
+      ],
+      "opportunities": [
+        [
+          "Confidence-adaptive planning",
+          "Connect model calibration errors to the planning horizon and test under distribution shift.",
+          "Empirical calibration does not directly establish formal safety guarantees."
+        ],
+        [
+          "Action-intervention evaluation for world models",
+          "Compare visual realism metrics, action prediction error, and closed-loop task utility.",
+          "True counterfactual outcomes may be unobservable in real environments."
+        ]
+      ]
+    },
+    "E1": {
+      "scope": "Identify and validate computations inside neural networks. Many representative studies focus on language models, but the research questions are not limited to them.",
+      "question": "How can we show that a candidate neural circuit genuinely and consistently implements a computation, rather than simply correlating with its output?",
+      "status": "Feature dictionaries, surrogate models, and circuit-tracing tools are evolving rapidly; faithfulness, completeness, and cross-input generalization still lack unified validation.",
+      "methods": [
+        [
+          "Sparse Feature Dictionaries",
+          "Use sparse decompositions to propose candidate intermediate features."
+        ],
+        [
+          "Attribution Graphs",
+          "Trace candidate computational paths; surrogate-model graphs need not faithfully reproduce the original model."
+        ],
+        [
+          "Activation Patching",
+          "Intervene on internal states and test whether proposed mechanisms predict behavior changes."
+        ],
+        [
+          "Cross-context Validation",
+          "Assess the stability of explanations across inputs and model configurations."
+        ]
+      ],
+      "timeline": [
+        [
+          "2025 · Circuit Tracing",
+          "Introduced circuit tracing and surrogate-model methods, while discussing faithfulness and reconstruction limitations."
+        ],
+        [
+          "2025 · Biology of a LLM",
+          "Used attribution graphs to examine specific behaviors and illustrate both potential and limitations."
+        ]
+      ],
+      "bottlenecks": [
+        [
+          "Mechanistic faithfulness",
+          "A surrogate model’s attribution graph need not capture the computations the original model actually performs.",
+          "Explicit in source"
+        ],
+        [
+          "Missing computational pathways",
+          "Analyses that freeze some attention patterns cannot explain how those patterns are formed.",
+          "Explicit in source"
+        ],
+        [
+          "Reconstruction error and explanatory gaps",
+          "Candidate features and graphs do not capture all of a model’s internal computation.",
+          "Explicit in source"
+        ],
+        [
+          "Interventions versus complete functional localization",
+          "Showing an effect of an internal intervention does not eliminate alternative pathways or establish a complete mechanism.",
+          "Editorial synthesis"
+        ]
+      ],
+      "links": [
+        "Causal learning: intervention and mechanism identification",
+        "AI evaluation: faithfulness and reproducibility",
+        "Deep learning architectures: internal computational structures to explain"
+      ],
+      "opportunities": [
+        [
+          "Separate discovery from confirmatory mechanism tests",
+          "Use independent tasks and held-out interventions to distinguish exploratory circuit discovery from confirmatory validation.",
+          "Sampling independence, intervention validity, and selection bias assumptions must be specified."
+        ],
+        [
+          "Benchmarks for explanatory faithfulness",
+          "Report cross-input stability, reconstruction quality, and predicted intervention effects as distinct metrics.",
+          "No single metric can establish complete mechanism identification."
+        ]
+      ]
+    },
+    "A5": {
+      "scope": "Use simulators or neural density estimators for repeated inference when likelihoods are intractable or posterior computation is costly; this is a subset of probabilistic ML.",
+      "question": "How can a limited simulation budget yield fast, diagnosable posterior approximations that are sensitive to model misspecification?",
+      "status": "ABC, NPE, NLE, and NRE now form established families of methods; expensive simulations, tail errors, posterior calibration, and real-world model misspecification remain active challenges.",
+      "methods": [
+        [
+          "Approximate Bayesian Computation",
+          "Use simulated data with distance functions or summary statistics for approximate inference."
+        ],
+        [
+          "Neural Posterior Estimation",
+          "Train reusable conditional posterior approximators."
+        ],
+        [
+          "Neural Likelihood Estimation",
+          "Learn a likelihood approximation before performing inference."
+        ],
+        [
+          "Neural Ratio Estimation",
+          "Estimate density ratios for inference and hypothesis testing."
+        ],
+        [
+          "Simulation-based Calibration",
+          "Repeatedly simulate and diagnose some calibration properties of an inference procedure."
+        ]
+      ],
+      "timeline": [
+        [
+          "2021 · SBIBM",
+          "Introduced benchmarks and metrics for comparing simulation-based inference methods."
+        ],
+        [
+          "2025 · Neural Methods Review",
+          "Surveyed the statistical methods and applications of neural amortized inference."
+        ],
+        [
+          "Continuously updated · SBC Diagnostics",
+          "The sbi documentation explains simulation-based calibration checks and their limitations."
+        ]
+      ],
+      "bottlenecks": [
+        [
+          "Expensive simulation budgets",
+          "Calls to high-fidelity simulators can dominate training and diagnostic costs.",
+          "Explicit in source"
+        ],
+        [
+          "Posterior tails and localized errors",
+          "Globally amortized models may underperform on rare observations or complicated posterior regions.",
+          "Editorial synthesis"
+        ],
+        [
+          "Calibration is not guaranteed by a single diagnostic",
+          "SBC is an important diagnostic, but passing a single calibration check is not sufficient to establish posterior correctness.",
+          "Explicit in source"
+        ],
+        [
+          "Simulator misspecification",
+          "An inference method that fits simulations may not be valid for reality when the simulator is wrong.",
+          "Research hypothesis"
+        ]
+      ],
+      "links": [
+        "Probabilistic ML: parent research field",
+        "Scientific ML: complex simulators and inverse problems",
+        "Generative modeling: conditional density estimation and normalizing flows",
+        "Trustworthy AI: calibration and uncertainty"
+      ],
+      "opportunities": [
+        [
+          "Diagnostic-driven active simulation",
+          "Use posterior diagnostics to reallocate simulation budgets; evaluate changes in coverage and tail accuracy.",
+          "Tuning and final evaluation should not rely on the same test data."
+        ],
+        [
+          "Robust diagnostics under simulator misspecification",
+          "Investigate which statistics distinguish approximation error from errors in the simulator itself.",
+          "Simulations alone cannot establish real-world validity without further assumptions."
+        ]
+      ]
+    }
+  }
+}
