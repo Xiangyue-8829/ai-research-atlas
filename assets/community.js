@@ -3,7 +3,7 @@
    only after the user deliberately opens the prefilled issue composer. */
 (() => {
   'use strict';
-  const FALLBACK_REPO='Xiangyue-8829/ai-research-atlas';
+  const FALLBACK_REPO='Xiangyue-8829/ai-research-atlas-preview';
   const params=new URLSearchParams(location.search);
   const state={lang:params.get('lang')==='en'?'en':'zh',repo:FALLBACK_REPO,issues:[],domain:params.get('domain')||'',topic:params.get('topic')||'',loaded:false,apiError:false,atlas:null};
   const categories=[
