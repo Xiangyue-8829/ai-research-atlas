@@ -2,9 +2,9 @@
 
 **Website / 在线网站：** https://xiangyue-8829.github.io/ai-research-atlas-preview/
 
-A bilingual, interactive research atlas for prospective AI PhD students and researchers. It connects research fields, detailed topics, foundational papers, open questions and scholarly discussions.
+A bilingual, interactive research atlas for AI PhD students and researchers. It connects research fields, detailed topics, foundational papers, open questions and scholarly discussions.
 
-AI Research Atlas 为有意攻读 AI 相关博士学位的读者和研究者提供可探索的研究知识地图、研究档案、专题论文入口与学术讨论空间。
+AI Research Atlas 为 AI 相关博士学位的读者和研究者提供可探索的研究知识地图、研究档案、专题论文入口与学术讨论空间。
 
 ## Explore / 网站入口
 
