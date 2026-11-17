@@ -1,0 +1,81 @@
+name: Repair legacy page URLs (one-time)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fix-legacy-page-seo.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair-legacy-pages:
+    if: github.repository == 'Xiangyue-8829/ai-research-atlas-preview'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out current website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Replace old site and repository URLs without rebuilding pages
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          pages = (
+              'research-framework.html',
+              'research-framework-en.html',
+              'research_profiles.html',
+          )
+          old_site = 'https://xiangyue-8829.github.io/ai-research-atlas/'
+          new_site = 'https://xiangyue-8829.github.io/ai-research-atlas-preview/'
+          old_repo = re.compile(r'https://github\.com/Xiangyue-8829/ai-research-atlas(?!-preview)')
+          new_repo = 'https://github.com/Xiangyue-8829/ai-research-atlas-preview'
+
+          for name in pages:
+              path = Path(name)
+              assert path.is_file(), f'Missing existing research page: {name}'
+              before = path.read_text(encoding='utf-8')
+              assert '<html' in before and '</html>' in before.lower(), f'Unexpected HTML: {name}'
+              updated = before.replace(old_site, new_site)
+              updated = old_repo.sub(new_repo, updated)
+
+              if old_site in updated or old_repo.search(updated):
+                  raise RuntimeError(f'Old URL remains in {name}')
+              if len(updated) < len(before):
+                  raise RuntimeError(f'Unexpected content loss in {name}')
+              if 'rel="canonical"' not in updated:
+                  raise RuntimeError(f'Canonical tag missing in {name}')
+              if '<h1' not in updated.lower():
+                  raise RuntimeError(f'Expected page heading missing in {name}')
+
+              path.write_text(updated, encoding='utf-8')
+              print(f'{name}: site URLs {before.count(old_site)}, GitHub URLs {len(old_repo.findall(before))}, status {"updated" if updated != before else "already current"}')
+          PY
+
+      - name: Save all three repaired HTML files as downloadable backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-research-atlas-three-pages-fixed
+          path: |
+            research-framework.html
+            research-framework-en.html
+            research_profiles.html
+          if-no-files-found: error
+
+      - name: Commit only the three corrected pages
+        shell: bash
+        run: |
+          git add -- research-framework.html research-framework-en.html research_profiles.html
+          if git diff --cached --quiet; then
+            echo 'No changes needed. Three source pages already use the new URLs.'
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m 'fix(seo): migrate legacy research pages to preview site URLs'
+          git push origin HEAD:main
