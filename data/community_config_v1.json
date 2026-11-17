@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "backend": "github_issues",
-  "repository": "Xiangyue-8829/ai-research-atlas",
+  "repository": "Xiangyue-8829/ai-research-atlas-preview",
   "notice_zh": "研究社区测试版：公开讨论保存于 GitHub Issues，需要 GitHub 账号才能发帖或回复。",
   "notice_en": "Research Community beta: public discussions are hosted in GitHub Issues; posting and replying require a GitHub account.",
   "moderation_policy": "Community posts are opinions, proposals, or references. They do not automatically become verified Atlas research content."
