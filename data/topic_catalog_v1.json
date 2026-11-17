@@ -1,0 +1,476 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-11-17",
+  "policy": "Curated dossiers are editorial summaries, not systematic reviews. `recent` means a verified selected recent paper, not necessarily the latest. Missing dossiers must be labeled incomplete.",
+  "topics": {
+    "A5::Gaussian Processes": {
+      "zh": "高斯过程把未知函数视为随机函数，核函数描述不同输入处函数值的协方差。它提供概率预测，但规模化与核设定仍是研究问题。",
+      "en": "Gaussian processes put a distribution on functions and use kernels to specify covariance structure. They provide probabilistic predictions, with open scalability and model-specification challenges.",
+      "questions_zh": "如何在大规模、非平稳数据和分布漂移下维持推断效率及不确定性质量？",
+      "questions_en": "How do GPs scale under nonstationarity and distribution shift without losing uncertainty reliability?",
+      "terms": [
+        "posterior",
+        "kernel"
+      ],
+      "related": [
+        "A5::GMRF / SPDE",
+        "G1::Inverse Problems"
+      ],
+      "papers": [
+        {
+          "title": "Gaussian Processes for Machine Learning",
+          "year": 2006,
+          "category": "foundation",
+          "url": "https://gaussianprocess.org/gpml/",
+          "note": "Rasmussen & Williams；经典教材"
+        }
+      ]
+    },
+    "A5::GMRF / SPDE": {
+      "zh": "高斯马尔可夫随机场（GMRF）用稀疏精度矩阵表达条件独立。Matérn-SPDE 通过有限元离散化，将连续空间场与稀疏 GMRF 联系起来。",
+      "en": "A Gaussian Markov random field (GMRF) encodes conditional independence with a sparse precision matrix. Matérn-SPDE connects continuous spatial fields with sparse GMRFs through finite elements.",
+      "questions_zh": "网格自适应、空间非平稳性、实时更新和非高斯后验近似如何兼顾？",
+      "questions_en": "How can mesh adaptivity, nonstationarity, streaming updates and non-Gaussian posterior inference be combined?",
+      "terms": [
+        "GMRF",
+        "precision matrix",
+        "conditional independence",
+        "posterior"
+      ],
+      "related": [
+        "A5::Laplace / INLA",
+        "B3::Factor Graphs",
+        "G1::Inverse Problems"
+      ],
+      "papers": [
+        {
+          "title": "An explicit link between Gaussian fields and Gaussian Markov random fields: the SPDE approach",
+          "year": 2011,
+          "category": "foundation",
+          "url": "https://doi.org/10.1111/j.1467-9868.2011.00777.x",
+          "note": "Lindgren, Rue & Lindström；Matérn-SPDE 的奠基工作"
+        }
+      ]
+    },
+    "A5::Laplace / INLA": {
+      "zh": "Laplace 近似利用模态附近的局部曲率逼近分布。INLA 将嵌套 Laplace 近似与超参数积分结合，用于潜在高斯模型的边际后验近似。",
+      "en": "Laplace approximations exploit curvature near a mode. INLA uses nested approximations and hyperparameter integration to estimate marginals in latent Gaussian models.",
+      "questions_zh": "在复杂非高斯、异质超参数或高维模型下如何诊断近似误差？",
+      "questions_en": "How can approximation errors be diagnosed for high-dimensional and non-Gaussian latent models?",
+      "terms": [
+        "Laplace approximation",
+        "posterior",
+        "GMRF"
+      ],
+      "related": [
+        "A5::GMRF / SPDE",
+        "A5::Variational Inference"
+      ],
+      "papers": [
+        {
+          "title": "Approximate Bayesian inference for latent Gaussian models by using integrated nested Laplace approximations",
+          "year": 2009,
+          "category": "foundation",
+          "url": "https://doi.org/10.1111/j.1467-9868.2008.00700.x",
+          "note": "Rue, Martino & Chopin；INLA 主论文"
+        }
+      ]
+    },
+    "A5::Variational Inference": {
+      "zh": "变分推断（VI）选择一个可优化的分布族 q，用优化代替复杂后验积分；常用目标为证据下界（ELBO）。效率与近似误差需要同时评估。",
+      "en": "Variational inference optimizes a tractable family q to approximate a posterior, often by maximizing the ELBO. Efficiency and approximation error require separate evaluation.",
+      "questions_zh": "复杂后验的尾部、多模态性与覆盖率误差如何诊断？",
+      "questions_en": "How can posterior tails, multimodality and coverage errors be diagnosed?",
+      "terms": [
+        "posterior",
+        "ELBO",
+        "KL divergence"
+      ],
+      "related": [
+        "A5::Laplace / INLA",
+        "A5::Amortized Inference"
+      ],
+      "papers": [
+        {
+          "title": "Variational Inference: A Review for Statisticians",
+          "year": 2017,
+          "category": "review",
+          "url": "https://arxiv.org/abs/1601.00670",
+          "note": "Blei, Kucukelbir & McAuliffe；统计学视角的系统综述"
+        }
+      ]
+    },
+    "A5::Simulation-based Inference": {
+      "zh": "当似然难以计算但能够运行模拟器时，可利用 ABC 或神经密度、密度比估计来进行参数推断，重点是推断器误差与模拟器错设。",
+      "en": "When likelihoods are intractable but simulators are available, SBI uses ABC, neural density estimators or density ratios for parameter inference.",
+      "questions_zh": "在有限模拟预算下，如何评估 posterior calibration 和模型错设？",
+      "questions_en": "How should posterior calibration and model misspecification be evaluated with limited simulation budgets?",
+      "terms": [
+        "likelihood",
+        "posterior",
+        "calibration"
+      ],
+      "related": [
+        "A5::Amortized Inference",
+        "G1::Inverse Problems"
+      ],
+      "papers": [
+        {
+          "title": "Frontier Methods for Likelihood-Free Inference",
+          "year": 2020,
+          "category": "review",
+          "url": "https://arxiv.org/abs/1911.01429",
+          "note": "Cranmer, Brehmer & Louppe；无似然推断综述"
+        },
+        {
+          "title": "Neural Methods for Amortized Inference",
+          "year": 2025,
+          "category": "recent-review",
+          "url": "https://doi.org/10.1146/annurev-statistics-112723-034123",
+          "note": "Zammit-Mangion 等；2025 年综述，非“最新论文”断言"
+        }
+      ]
+    },
+    "A5::Amortized Inference": {
+      "zh": "摊销推断首先在大量模拟任务上训练一个可复用的推断器，然后对新观测快速输出近似后验或参数估计，以训练成本换取重复推断速度。",
+      "en": "Amortized inference trains a reusable model across many problems, then rapidly estimates posteriors or parameters for new observations.",
+      "questions_zh": "训练分布外的观测、尾部误差与资源分配如何处理？",
+      "questions_en": "How can out-of-distribution observations, posterior tails and compute budgets be handled?",
+      "terms": [
+        "posterior",
+        "calibration"
+      ],
+      "related": [
+        "A5::Simulation-based Inference",
+        "E1::Calibration"
+      ],
+      "papers": [
+        {
+          "title": "Neural Methods for Amortized Inference",
+          "year": 2025,
+          "category": "recent-review",
+          "url": "https://doi.org/10.1146/annurev-statistics-112723-034123",
+          "note": "2025 年统计学年评综述"
+        }
+      ]
+    },
+    "A5::Probabilistic Graphical Models": {
+      "zh": "概率图模型用图结构表示随机变量之间的依赖和概率分解。图的边可能编码条件独立，但图结构与推断算法是不同层面的对象。",
+      "en": "Probabilistic graphical models represent dependencies and probability factorizations. A graph representation and an inference algorithm are distinct layers.",
+      "questions_zh": "高维非高斯图中如何进行稳定、可诊断的近似推断？",
+      "questions_en": "How can inference stay scalable and diagnosable on high-dimensional non-Gaussian graphs?",
+      "terms": [
+        "conditional independence",
+        "factor graph",
+        "belief propagation"
+      ],
+      "related": [
+        "B3::Factor Graphs",
+        "B3::Message Passing / BP",
+        "A5::GMRF / SPDE"
+      ],
+      "papers": [
+        {
+          "title": "Factor Graphs and the Sum-Product Algorithm",
+          "year": 2001,
+          "category": "foundation",
+          "url": "https://web-static-aws.seas.harvard.edu/courses/cs281/papers/frey2001factor.pdf",
+          "note": "Kschischang, Frey & Loeliger；图分解与消息传递"
+        }
+      ]
+    },
+    "A6::DML / Debiasing": {
+      "zh": "双重／去偏机器学习通过 Neyman 正交估计方程和交叉拟合，降低高维辅助模型估计误差对低维目标参数推断的影响。",
+      "en": "Double/debiased ML combines Neyman-orthogonal moments and cross-fitting to reduce bias from nuisance-function estimation while targeting low-dimensional inference.",
+      "questions_zh": "弱重叠、分布转移与干扰效应下如何保持有效推断？",
+      "questions_en": "How do inferential guarantees change under weak overlap, shift and interference?",
+      "terms": [
+        "Neyman orthogonality",
+        "cross-fitting",
+        "nuisance function"
+      ],
+      "related": [
+        "A6::TMLE / Doubly Robust",
+        "E1::Uncertainty Quantification"
+      ],
+      "papers": [
+        {
+          "title": "Double/debiased machine learning for treatment and structural parameters",
+          "year": 2018,
+          "category": "foundation",
+          "url": "https://doi.org/10.1111/ectj.12097",
+          "note": "Chernozhukov 等；正交估计与交叉拟合"
+        }
+      ]
+    },
+    "B3::Factor Graphs": {
+      "zh": "因子图通过变量节点与因子节点表达联合函数的局部分解；Sum-Product 算法利用局部消息计算边际量。它与神经图网络中的消息聚合相关，但不等价。",
+      "en": "Factor graphs express a global function as local factors on a bipartite graph. Sum-product messages compute marginals; these are distinct from learned GNN aggregation.",
+      "questions_zh": "有环图中消息传递何时收敛、何时能保证边际精度？",
+      "questions_en": "When do messages converge, and what guarantees survive in loopy graphs?",
+      "terms": [
+        "factor graph",
+        "belief propagation",
+        "conditional independence"
+      ],
+      "related": [
+        "B3::Message Passing / BP",
+        "A5::Probabilistic Graphical Models",
+        "D4::State Estimation"
+      ],
+      "papers": [
+        {
+          "title": "Factor Graphs and the Sum-Product Algorithm",
+          "year": 2001,
+          "category": "foundation",
+          "url": "https://web-static-aws.seas.harvard.edu/courses/cs281/papers/frey2001factor.pdf",
+          "note": "Kschischang、Frey、Loeliger；经典方法"
+        }
+      ]
+    },
+    "B3::Graph Neural Networks": {
+      "zh": "图神经网络利用邻接关系和可学习的局部消息聚合构造节点或图级表示。其输出并不自动具有概率推断意义或校准保证。",
+      "en": "Graph neural networks learn node and graph representations by neighborhood aggregation, without automatically guaranteeing probabilistic correctness.",
+      "questions_zh": "表达能力、过平滑和图分布外泛化如何解决？",
+      "questions_en": "How can expressive limitations, oversmoothing and out-of-graph generalization be addressed?",
+      "terms": [
+        "message passing"
+      ],
+      "related": [
+        "B3::Message Passing / BP",
+        "A4::Representation Learning"
+      ],
+      "papers": [
+        {
+          "title": "Semi-Supervised Classification with Graph Convolutional Networks",
+          "year": 2017,
+          "category": "foundation",
+          "url": "https://arxiv.org/abs/1609.02907",
+          "note": "Kipf & Welling；GCN 代表工作"
+        }
+      ]
+    },
+    "B2::Diffusion Models": {
+      "zh": "扩散生成模型学习反向去噪过程，从噪声生成数据；其统计联系包括分数匹配、变分界与随机微分方程。",
+      "en": "Diffusion models learn a denoising process to generate data from noise, connecting score matching, variational objectives and stochastic dynamics.",
+      "questions_zh": "在生成质量、计算成本和可验证不确定性之间如何权衡？",
+      "questions_en": "How should sample quality, compute and uncertainty validity be balanced?",
+      "terms": [
+        "score matching"
+      ],
+      "related": [
+        "B2::Score-based Generative Models",
+        "G1::Inverse Problems"
+      ],
+      "papers": [
+        {
+          "title": "Denoising Diffusion Probabilistic Models",
+          "year": 2020,
+          "category": "foundation",
+          "url": "https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html",
+          "note": "Ho、Jain、Abbeel；NeurIPS 2020 代表工作"
+        }
+      ]
+    },
+    "D5::Latent Dynamics": {
+      "zh": "世界模型中的潜在动力学在隐状态空间学习动作条件下的状态转移，用于预测、规划和策略学习。单步预测好并不保证长时闭环决策可靠。",
+      "en": "Latent dynamics learn action-conditional transitions in a hidden state space for prediction and planning. One-step accuracy need not imply long-horizon control reliability.",
+      "questions_zh": "长期误差传播、状态识别性与规划不确定性如何量化？",
+      "questions_en": "How can rollout error, state identifiability and planning uncertainty be quantified?",
+      "terms": [
+        "latent state",
+        "belief state",
+        "calibration"
+      ],
+      "related": [
+        "D2::Model-based RL",
+        "D5::POMDP Belief Models",
+        "E1::Uncertainty Quantification"
+      ],
+      "papers": [
+        {
+          "title": "World Models",
+          "year": 2018,
+          "category": "foundation",
+          "url": "https://arxiv.org/abs/1803.10122",
+          "note": "Ha & Schmidhuber；世界模型早期代表作"
+        },
+        {
+          "title": "Mastering diverse control tasks through world models",
+          "year": 2025,
+          "category": "recent",
+          "url": "https://www.nature.com/articles/s41586-025-08744-2",
+          "note": "Hafner 等；DreamerV3，Nature 2025"
+        }
+      ]
+    },
+    "E1::Conformal Prediction": {
+      "zh": "共形预测在交换性等条件下利用校准样本构造有限样本覆盖有保证的预测集合；边际覆盖不等同于所有子群或单点的条件覆盖。",
+      "en": "Conformal prediction constructs prediction sets with finite-sample marginal coverage under exchangeability; it does not automatically grant conditional coverage.",
+      "questions_zh": "面对分布漂移、时间依赖或个体条件覆盖要求时，如何建立有效保证？",
+      "questions_en": "How can conformal inference handle distribution shift, dependence and conditional coverage?",
+      "terms": [
+        "exchangeability",
+        "coverage",
+        "calibration"
+      ],
+      "related": [
+        "E1::Calibration",
+        "C6::Probabilistic Forecasting"
+      ],
+      "papers": [
+        {
+          "title": "Conformal Prediction: A Gentle Introduction",
+          "year": 2023,
+          "category": "review",
+          "url": "https://mlanthology.org/ftml/2023/angelopoulos2023ftml-conformal/",
+          "note": "Angelopoulos & Bates；理论与应用综述"
+        }
+      ]
+    },
+    "E1::Mechanistic Interpretability": {
+      "zh": "机制可解释性试图发现模型内部特征和计算电路，并通过干预测试候选解释。归因图可用来提出假设，但不能单凭可视化证明真实机制。",
+      "en": "Mechanistic interpretability seeks internal features and computational circuits, validating candidate explanations through interventions. An attribution graph is a hypothesis, not proof.",
+      "questions_zh": "替代模型的忠实性、遗漏路径和跨输入稳定性如何评价？",
+      "questions_en": "How can surrogate faithfulness, omitted pathways and cross-context stability be evaluated?",
+      "terms": [
+        "attribution graph",
+        "causal intervention"
+      ],
+      "related": [
+        "A6::Causal Discovery",
+        "E1::Explainable AI",
+        "B1::Transformers / Attention"
+      ],
+      "papers": [
+        {
+          "title": "Circuit Tracing: Revealing Computational Graphs in Language Models",
+          "year": 2025,
+          "category": "recent",
+          "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html",
+          "note": "Anthropic；2025 年研究方法文章"
+        }
+      ]
+    },
+    "G1::Neural Operators": {
+      "zh": "神经算子学习函数空间之间的映射，例如从 PDE 参数场到解场，目标是跨离散网格近似算子而非只拟合一个固定维度向量。",
+      "en": "Neural operators learn maps between function spaces, e.g. from PDE coefficients to solution fields, rather than only finite-dimensional vector functions.",
+      "questions_zh": "复杂边界、非平稳场和分布外 PDE 参数下的泛化如何测量？",
+      "questions_en": "How can generalization be measured across meshes, boundary conditions and unseen PDE coefficients?",
+      "terms": [
+        "operator learning"
+      ],
+      "related": [
+        "G1::PDE Learning",
+        "B1::Neural Operators"
+      ],
+      "papers": [
+        {
+          "title": "Fourier Neural Operator for Parametric Partial Differential Equations",
+          "year": 2021,
+          "category": "foundation",
+          "url": "https://arxiv.org/abs/2010.08895",
+          "note": "Li 等；FNO 代表论文"
+        }
+      ]
+    }
+  },
+  "glossary": {
+    "posterior": {
+      "zh": "后验分布：给定观测数据后的未知量不确定性分布。",
+      "en": "Posterior distribution of unknowns given data."
+    },
+    "kernel": {
+      "zh": "核函数：在高斯过程等模型中规定协方差或相似性。",
+      "en": "Kernel specifying similarity or covariance, notably for Gaussian processes."
+    },
+    "GMRF": {
+      "zh": "高斯马尔可夫随机场：具有局部条件独立的多元高斯模型。",
+      "en": "Gaussian Markov random field with local conditional independence."
+    },
+    "precision matrix": {
+      "zh": "精度矩阵：协方差矩阵的逆；非退化高斯模型中，非对角零元素对应给定其余变量的条件独立。",
+      "en": "Inverse covariance; off-diagonal zeros imply Gaussian conditional independence."
+    },
+    "conditional independence": {
+      "zh": "条件独立：给定指定变量后，其余两个变量的随机性不再相互影响。",
+      "en": "Two variables become statistically independent after conditioning on a given set."
+    },
+    "Laplace approximation": {
+      "zh": "拉普拉斯近似：利用密度模态附近的二阶曲率近似概率积分。",
+      "en": "Approximation using local curvature near a mode."
+    },
+    "ELBO": {
+      "zh": "证据下界：变分推断中的典型优化目标。",
+      "en": "Evidence lower bound optimized in variational inference."
+    },
+    "KL divergence": {
+      "zh": "KL 散度：两个概率分布之间的一种非对称信息差异。",
+      "en": "An asymmetric information divergence between probability distributions."
+    },
+    "likelihood": {
+      "zh": "似然：固定数据后，将概率模型看作参数的函数。",
+      "en": "Probabilistic model viewed as a function of parameters for fixed observations."
+    },
+    "calibration": {
+      "zh": "校准：不确定性估计与评估机制中的实际频率之间的对应关系。",
+      "en": "Alignment of uncertainty statements with observed frequencies under evaluation."
+    },
+    "Neyman orthogonality": {
+      "zh": "Neyman 正交性：目标估计方程对辅助参数的一阶扰动不敏感。",
+      "en": "First-order local insensitivity to nuisance estimation error."
+    },
+    "cross-fitting": {
+      "zh": "交叉拟合：将辅助模型训练与目标统计量计算放在不同数据子集中。",
+      "en": "Cross-fitting separates nuisance training from score evaluation across folds."
+    },
+    "nuisance function": {
+      "zh": "辅助函数：不属于最终目标参数、却必须估计或处理的未知量。",
+      "en": "An unknown function used for inference but not itself the target."
+    },
+    "factor graph": {
+      "zh": "因子图：用变量节点和因子节点表达整体函数的局部分解。",
+      "en": "A bipartite graph encoding a factorization into local functions."
+    },
+    "belief propagation": {
+      "zh": "信念传播：图上的局部概率消息传递。树图上的 sum-product 计算边际可精确；有环图通常是近似。",
+      "en": "Local message passing, exact for sum-product marginals on trees and often approximate on loops."
+    },
+    "message passing": {
+      "zh": "消息传递：沿图边交换局部信息，既可指概率消息也可指可学习的图特征。",
+      "en": "Local exchange of information on graph edges, probabilistic or learned."
+    },
+    "score matching": {
+      "zh": "分数匹配：利用对数密度的梯度学习概率分布。",
+      "en": "Learning distributions via gradients of log density."
+    },
+    "latent state": {
+      "zh": "隐状态：用于表示系统动力学、但不直接观测的内部变量。",
+      "en": "Unobserved internal state describing system dynamics."
+    },
+    "belief state": {
+      "zh": "信念状态：对潜在状态的概率分布，通常条件于历史观测与动作。",
+      "en": "Distribution over states conditional on observation/action history."
+    },
+    "exchangeability": {
+      "zh": "交换性：联合分布不随样本排列顺序改变。",
+      "en": "Joint distribution invariant under sample permutations."
+    },
+    "coverage": {
+      "zh": "覆盖率：区间或集合包含目标真值的重复抽样概率。",
+      "en": "Probability an uncertainty set contains the target."
+    },
+    "attribution graph": {
+      "zh": "归因图：表达模型内部候选依赖路径的工具，不直接等于完整机制证明。",
+      "en": "Proposed internal dependency graph, not automatically a faithful mechanism."
+    },
+    "causal intervention": {
+      "zh": "因果干预：主动改变状态或变量，以检验对结果的因果作用。",
+      "en": "Deliberate change to a variable or state to test causal effects."
+    },
+    "operator learning": {
+      "zh": "算子学习：学习函数到函数的映射。",
+      "en": "Learning a map between functions or function spaces."
+    }
+  }
+}
