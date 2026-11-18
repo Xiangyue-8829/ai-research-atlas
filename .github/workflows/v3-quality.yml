@@ -1,0 +1,28 @@
+name: Validate AI Research Atlas V3
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check assets/atlas-v3.js
+          node --check assets/research-index-v3.js
+          node --check assets/pages-v3.js
+          node --check assets/atlas-kg.js
+          node --check assets/research-profile.js
+          node --check assets/topic.js
+      - name: Validate research data, page routes and official URLs
+        run: python tools/check_v3.py

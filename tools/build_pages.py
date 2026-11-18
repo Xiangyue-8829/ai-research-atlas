@@ -49,6 +49,7 @@ def page(id_, cn, en):
 <meta name="description" content="{escape(en,quote=True)} / {escape(cn,quote=True)} — Research fields, open questions, methods and related research in AI Research Atlas.">
 <link rel="canonical" href="{BASE_URL}/research/{id_}/">
 <link rel="stylesheet" href="../../assets/research-profile.css">
+<link rel="stylesheet" href="../../assets/dossier-v3.css">
 <title>{escape(cn)} · {escape(en)} · AI Research Atlas</title>
 <script defer src="../../assets/research-profile.js"></script>
 </head>

@@ -1,0 +1,7 @@
+/* Subpage visual refinements: layered over existing dossier/topic/community styles. */
+:root{--bg:#06111f;--panel:#0c2033;--border:#2b465b;--accent:#73e1d4;--muted:#94adc2}
+body{background:radial-gradient(ellipse 850px 460px at 75% -130px,rgba(36,77,113,.25),transparent 75%),#06111f;color:#e7f1fa}
+.header{min-height:75px;background:rgba(6,17,31,.92);backdrop-filter:blur(18px);border-color:rgba(120,175,194,.18)}.header .brand{font-size:16px;letter-spacing:-.025em}.header .nav a{color:#abc2d5}.header .nav a:hover{color:#91efe2}.header #lang{border-color:#3a546b;background:rgba(18,41,64,.7)}
+.shell{max-width:1320px;padding-top:35px}.hero h1{letter-spacing:-.054em}.hero .summary{color:#b2cadb}.meta span{background:rgba(14,39,59,.72);border-color:rgba(118,164,194,.22)}.section{border-color:rgba(130,168,190,.17)}.info-card,.topic-tile,.aside-card{background:linear-gradient(145deg,rgba(17,41,64,.85),rgba(10,27,45,.85));border-color:rgba(119,163,191,.21)}.topic-tile:hover,.info-card:hover{border-color:rgba(101,223,213,.6)}.pilot{background:linear-gradient(145deg,#10283c,#091d31);border-color:#34586b}.back-link{border-color:#36596a}.source-list a{word-break:break-word}
+@media(max-width:700px){.header{padding:14px 18px;gap:10px}.header .nav{gap:10px;flex-wrap:wrap}.shell{padding:22px 18px 45px}.hero h1{font-size:clamp(30px,8vw,44px)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
