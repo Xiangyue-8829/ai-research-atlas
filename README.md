@@ -1,6 +1,6 @@
 # AI Research Atlas · 人工智能研究知识图谱
 
-**Website / 在线网站：** https://xiangyue-8829.github.io/ai-research-atlas-preview/
+**Website / 在线网站：** https://xiangyue-8829.github.io/ai-research-atlas/
 
 A bilingual, interactive research atlas for AI PhD students and researchers. It connects research fields, detailed topics, foundational papers, open questions and scholarly discussions.
 
@@ -8,11 +8,11 @@ AI Research Atlas 为 AI 相关博士学位的读者和研究者提供可探索�
 
 ## Explore / 网站入口
 
-- [Knowledge Graph · 知识图谱](https://xiangyue-8829.github.io/ai-research-atlas-preview/)
-- [Research Library · 研究档案](https://xiangyue-8829.github.io/ai-research-atlas-preview/research-index.html)
-- [Research Community · 研究社区](https://xiangyue-8829.github.io/ai-research-atlas-preview/community.html)
-- [AI Research Landscape · 中文研究框架](https://xiangyue-8829.github.io/ai-research-atlas-preview/research-framework.html)
-- [AI Research Landscape · English](https://xiangyue-8829.github.io/ai-research-atlas-preview/research-framework-en.html)
+- [Knowledge Graph · 知识图谱](https://xiangyue-8829.github.io/ai-research-atlas/)
+- [Research Library · 研究档案](https://xiangyue-8829.github.io/ai-research-atlas/research-index.html)
+- [Research Community · 研究社区](https://xiangyue-8829.github.io/ai-research-atlas/community.html)
+- [AI Research Landscape · 中文研究框架](https://xiangyue-8829.github.io/ai-research-atlas/research-framework.html)
+- [AI Research Landscape · English](https://xiangyue-8829.github.io/ai-research-atlas/research-framework-en.html)
 
 ## Structure / 项目结构
 
@@ -34,12 +34,12 @@ Research maturity statements, suggested relations, and open problems are editori
 
 ## Community storage / 社区数据
 
-The current forum uses public GitHub Issues in **[https://github.com/Xiangyue-8829/ai-research-atlas-preview](https://github.com/Xiangyue-8829/ai-research-atlas-preview/issues)**. Posting or replying requires a GitHub account. Updating the website does not erase issues, but deleting the issue-hosting repository does.
+The current forum uses public GitHub Issues in **[https://github.com/Xiangyue-8829/ai-research-atlas](https://github.com/Xiangyue-8829/ai-research-atlas/issues)**. Posting or replying requires a GitHub account. Updating the website does not erase issues, but deleting the issue-hosting repository does.
 
 当前讨论记录保存在本仓库的 GitHub Issues；更新网页不会清空帖子，但删除 Issues 或所在仓库可能造成数据丢失。
 
 ## Maintenance / 维护
 
-Keep the canonical URLs, `sitemap.xml`, and GitHub repository links aligned with https://xiangyue-8829.github.io/ai-research-atlas-preview/. Before renaming or deleting a repository, check Pages configuration, topic links, community backend, and search-engine properties.
+Keep the canonical URLs, `sitemap.xml`, and GitHub repository links aligned with https://xiangyue-8829.github.io/ai-research-atlas/. Before renaming or deleting a repository, check Pages configuration, topic links, community backend, and search-engine properties.
 
 See `README_DEPLOY.md` and `ROADMAP.md` for deployment and roadmap notes. This project remains under development; no open-source license has been selected yet.
