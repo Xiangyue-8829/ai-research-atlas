@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xiangyue-8829.github.io/ai-research-atlas/sitemap.xml

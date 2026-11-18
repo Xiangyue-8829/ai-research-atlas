@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import sys
 
 ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
-BASE = "https://xiangyue-8829.github.io/ai-research-atlas-preview/"
+BASE = "https://xiangyue-8829.github.io/ai-research-atlas/"
 NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 ET.register_namespace("", NS)
 
